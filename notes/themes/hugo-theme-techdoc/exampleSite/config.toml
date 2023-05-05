@@ -1,11 +1,11 @@
-baseURL = "https://rickdgray.github.io/"
+baseURL = "https://example.com"
 
 languageCode = "en-us"
 DefaultContentLanguage = "en"
-title = "Rick's Notes"
+title = "Hugo Techdoc Theme"
 theme = "hugo-theme-techdoc"
 
-hasCJKLanguage = false
+hasCJKLanguage = true
 metaDataFormat = "yaml"
 
 defaultContentLanguage = "en"
@@ -15,13 +15,13 @@ enableMissingTranslationPlaceholders = false
 [params]
 
     # Source Code repository section
-    description = "Dev notes you can use"
-    github_repository = "https://github.com/rickdgray/Obsidian"
-    version = "0.1"
+    description = "put your description"
+    github_repository = "https://github.com/thingsym/hugo-theme-techdoc"
+    version = "0.9.9"
 
     # Documentation repository section
     # documentation repository (set edit link to documentation repository)
-    github_doc_repository = "https://github.com/rickdgray/Obsidian"
+    github_doc_repository = "https://github.com/thingsym/hugo-theme-techdoc"
     github_doc_repository_path = ""
 
     # Analytic section
@@ -66,6 +66,26 @@ enableMissingTranslationPlaceholders = false
     algolia_indexName = "hugo-demo-techdoc"
     algolia_appId = "7W4SAN4PLK"
     algolia_apiKey = "cbf12a63ff72d9c5dc0c10c195cf9128" # Search-Only API Key
+
+# Global menu section
+# See https://gohugo.io/content-management/menus/
+[menu]
+    [[menu.main]]
+        name = "Home"
+        url = "/"
+        weight = 1
+        identifier = 'home'
+        pre = "<i class='fa fa-heart'></i>&nbsp;"
+
+    [[menu.main]]
+        name = "Twitter"
+        url = "https://twitter.com/thingsym"
+        weight = 2
+        identifier = 'twitter'
+        pre = "<b>pre!</b> "
+        post = " <b>post!</b>"
+        [menu.main.params]
+          class = 'twitter-menu-item'
 
 # Markup configure section
 # See https://gohugo.io/getting-started/configuration-markup/
