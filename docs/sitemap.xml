@@ -2,10 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://rickdgray.github.io/notes/games/advance-wars/</loc>
+  </url><url>
+    <loc>https://rickdgray.github.io/notes/dev/csharp/</loc>
+  </url><url>
+    <loc>https://rickdgray.github.io/notes/dev/csharp-for-newbies/</loc>
+  </url><url>
     <loc>https://rickdgray.github.io/notes/categories/</loc>
+  </url><url>
+    <loc>https://rickdgray.github.io/notes/dev/choose-a-license/</loc>
+  </url><url>
+    <loc>https://rickdgray.github.io/notes/dev/db-migrations/</loc>
+  </url><url>
+    <loc>https://rickdgray.github.io/notes/dev/</loc>
+  </url><url>
+    <loc>https://rickdgray.github.io/notes/games/</loc>
+  </url><url>
+    <loc>https://rickdgray.github.io/notes/dev/git/</loc>
+  </url><url>
+    <loc>https://rickdgray.github.io/notes/dev/hard-drive-testing/</loc>
+  </url><url>
+    <loc>https://rickdgray.github.io/notes/dev/networking/</loc>
+  </url><url>
+    <loc>https://rickdgray.github.io/notes/dev/new-pc/</loc>
+  </url><url>
+    <loc>https://rickdgray.github.io/notes/other/october/</loc>
+  </url><url>
+    <loc>https://rickdgray.github.io/notes/other/</loc>
   </url><url>
     <loc>https://rickdgray.github.io/notes/</loc>
   </url><url>
+    <loc>https://rickdgray.github.io/notes/dev/software-engineering/</loc>
+  </url><url>
+    <loc>https://rickdgray.github.io/notes/dev/ssl-certs/</loc>
+  </url><url>
+    <loc>https://rickdgray.github.io/notes/dev/system-admin/</loc>
+  </url><url>
     <loc>https://rickdgray.github.io/notes/tags/</loc>
+  </url><url>
+    <loc>https://rickdgray.github.io/notes/dev/terminal/</loc>
   </url>
 </urlset>
