@@ -18,7 +18,7 @@
 :root {}
 </style>
 <meta property="og:title" content="Terminal" />
-<meta property="og:description" content="Windows Microsoft.PowerShell_profile.ps1 Import-Module posh-git oh-my-posh init pwsh --config &#34;~/Documents/PowerShell/theme.omp.json&#34; | Invoke-Expression function repos { &amp; cd ~/source/repos } function edit { param ( $Filename ) &amp; &#34;C:/Program Files/Notepad&#43;&#43;/notepad&#43;&#43;.exe&#34; $Filename } function which { param ( $Command ) if ($PSBoundParameters.ContainsKey(&#39;Command&#39;)) { Write-Host (Get-Module (Get-Command $Command).Source).Path } } clear Generate theme $alignment = &#39;left&#39; $textColorPrimary = &#39;#ffffff&#39; $textColorSecondary = &#39;#ff0000&#39; $style = &#39;plain&#39; $type = &#39;prompt&#39; $username = @{ &#39;foreground&#39; = $textColorPrimary &#39;style&#39; = $style &#39;template&#39; = &#34;&lt;$textColorSecondary&gt;┏[&lt;/&gt;{{ ." />
+<meta property="og:description" content="Windows Microsoft.PowerShell_profile.ps1 Import-Module posh-git oh-my-posh init pwsh --config &#34;~/Documents/PowerShell/theme.omp.json&#34; | Invoke-Expression function repos { &amp; cd ~/source/repos } function edit { param ( $Filename ) &amp; &#34;C:/Program Files/Notepad&#43;&#43;/notepad&#43;&#43;.exe&#34; $Filename } New-Alias which get-command clear Generate theme $alignment = &#39;left&#39; $textColorPrimary = &#39;#ffffff&#39; $textColorSecondary = &#39;#ff0000&#39; $style = &#39;plain&#39; $type = &#39;prompt&#39; $username = @{ &#39;foreground&#39; = $textColorPrimary &#39;style&#39; = $style &#39;template&#39; = &#34;&lt;$textColorSecondary&gt;┏[&lt;/&gt;{{ .UserName }}&lt;$textColorSecondary&gt;]&lt;/&gt;&#34; &#39;type&#39; = &#39;session&#39; } $git = @{ &#39;foreground&#39; = $textColorPrimary &#39;style&#39; = $style &#39;template&#39; = &#34;&lt;$textColorSecondary&gt;[&lt;/&gt;{{ ." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://rickdgray.github.io/notes/dev/terminal/" /><meta property="og:image" content="https://rickdgray.github.io/notes/images/og-image.png"/><meta property="article:section" content="Dev" />
 
@@ -27,11 +27,11 @@
 <meta name="twitter:image" content="https://rickdgray.github.io/notes/images/og-image.png"/>
 
 <meta name="twitter:title" content="Terminal"/>
-<meta name="twitter:description" content="Windows Microsoft.PowerShell_profile.ps1 Import-Module posh-git oh-my-posh init pwsh --config &#34;~/Documents/PowerShell/theme.omp.json&#34; | Invoke-Expression function repos { &amp; cd ~/source/repos } function edit { param ( $Filename ) &amp; &#34;C:/Program Files/Notepad&#43;&#43;/notepad&#43;&#43;.exe&#34; $Filename } function which { param ( $Command ) if ($PSBoundParameters.ContainsKey(&#39;Command&#39;)) { Write-Host (Get-Module (Get-Command $Command).Source).Path } } clear Generate theme $alignment = &#39;left&#39; $textColorPrimary = &#39;#ffffff&#39; $textColorSecondary = &#39;#ff0000&#39; $style = &#39;plain&#39; $type = &#39;prompt&#39; $username = @{ &#39;foreground&#39; = $textColorPrimary &#39;style&#39; = $style &#39;template&#39; = &#34;&lt;$textColorSecondary&gt;┏[&lt;/&gt;{{ ."/>
+<meta name="twitter:description" content="Windows Microsoft.PowerShell_profile.ps1 Import-Module posh-git oh-my-posh init pwsh --config &#34;~/Documents/PowerShell/theme.omp.json&#34; | Invoke-Expression function repos { &amp; cd ~/source/repos } function edit { param ( $Filename ) &amp; &#34;C:/Program Files/Notepad&#43;&#43;/notepad&#43;&#43;.exe&#34; $Filename } New-Alias which get-command clear Generate theme $alignment = &#39;left&#39; $textColorPrimary = &#39;#ffffff&#39; $textColorSecondary = &#39;#ff0000&#39; $style = &#39;plain&#39; $type = &#39;prompt&#39; $username = @{ &#39;foreground&#39; = $textColorPrimary &#39;style&#39; = $style &#39;template&#39; = &#34;&lt;$textColorSecondary&gt;┏[&lt;/&gt;{{ .UserName }}&lt;$textColorSecondary&gt;]&lt;/&gt;&#34; &#39;type&#39; = &#39;session&#39; } $git = @{ &#39;foreground&#39; = $textColorPrimary &#39;style&#39; = $style &#39;template&#39; = &#34;&lt;$textColorSecondary&gt;[&lt;/&gt;{{ ."/>
 <meta itemprop="name" content="Terminal">
-<meta itemprop="description" content="Windows Microsoft.PowerShell_profile.ps1 Import-Module posh-git oh-my-posh init pwsh --config &#34;~/Documents/PowerShell/theme.omp.json&#34; | Invoke-Expression function repos { &amp; cd ~/source/repos } function edit { param ( $Filename ) &amp; &#34;C:/Program Files/Notepad&#43;&#43;/notepad&#43;&#43;.exe&#34; $Filename } function which { param ( $Command ) if ($PSBoundParameters.ContainsKey(&#39;Command&#39;)) { Write-Host (Get-Module (Get-Command $Command).Source).Path } } clear Generate theme $alignment = &#39;left&#39; $textColorPrimary = &#39;#ffffff&#39; $textColorSecondary = &#39;#ff0000&#39; $style = &#39;plain&#39; $type = &#39;prompt&#39; $username = @{ &#39;foreground&#39; = $textColorPrimary &#39;style&#39; = $style &#39;template&#39; = &#34;&lt;$textColorSecondary&gt;┏[&lt;/&gt;{{ .">
+<meta itemprop="description" content="Windows Microsoft.PowerShell_profile.ps1 Import-Module posh-git oh-my-posh init pwsh --config &#34;~/Documents/PowerShell/theme.omp.json&#34; | Invoke-Expression function repos { &amp; cd ~/source/repos } function edit { param ( $Filename ) &amp; &#34;C:/Program Files/Notepad&#43;&#43;/notepad&#43;&#43;.exe&#34; $Filename } New-Alias which get-command clear Generate theme $alignment = &#39;left&#39; $textColorPrimary = &#39;#ffffff&#39; $textColorSecondary = &#39;#ff0000&#39; $style = &#39;plain&#39; $type = &#39;prompt&#39; $username = @{ &#39;foreground&#39; = $textColorPrimary &#39;style&#39; = $style &#39;template&#39; = &#34;&lt;$textColorSecondary&gt;┏[&lt;/&gt;{{ .UserName }}&lt;$textColorSecondary&gt;]&lt;/&gt;&#34; &#39;type&#39; = &#39;session&#39; } $git = @{ &#39;foreground&#39; = $textColorPrimary &#39;style&#39; = $style &#39;template&#39; = &#34;&lt;$textColorSecondary&gt;[&lt;/&gt;{{ .">
 
-<meta itemprop="wordCount" content="221"><meta itemprop="image" content="https://rickdgray.github.io/notes/images/og-image.png"/>
+<meta itemprop="wordCount" content="208"><meta itemprop="image" content="https://rickdgray.github.io/notes/images/og-image.png"/>
 <meta itemprop="keywords" content="" /></head>
 <body><div class="container"><header>
 <h1>Rick&#39;s Notes</h1><span class="version">Version 0.1</span><a href="https://github.com/rickdgray/Obsidian" class="github"><i class="fab fa-github"></i></a>
@@ -59,15 +59,7 @@
 </span></span><span style="display:flex;"><span>	&amp; <span style="color:#e6db74">&#34;C:/Program Files/Notepad++/notepad++.exe&#34;</span> $Filename
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> which {
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">param</span> (
-</span></span><span style="display:flex;"><span>		$Command
-</span></span><span style="display:flex;"><span>	)
-</span></span><span style="display:flex;"><span>	
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> ($PSBoundParameters.ContainsKey(<span style="color:#e6db74">&#39;Command&#39;</span>)) {
-</span></span><span style="display:flex;"><span>		Write-Host (Get-Module (Get-Command $Command).Source).Path
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>New-Alias which get-command
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>clear
 </span></span></code></pre></div><h2 id="generate-theme">Generate theme</h2>
@@ -148,7 +140,7 @@
 <div class="edit-meta">
 
 <br><a href="https://github.com/rickdgray/Obsidian/edit/master/Dev%5cTerminal.md" class="edit-page"><i class="fas fa-pen-square"></i>&nbsp;Edit on GitHub</a></div><nav class="pagination"><a class="nav nav-prev" href="https://rickdgray.github.io/notes/dev/system-admin/" title="System Admin"><i class="fas fa-arrow-left" aria-hidden="true"></i>&nbsp;Prev - System Admin</a>
-<a class="nav nav-next" href="https://rickdgray.github.io/notes/games/" title="Games">Next - Games <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+<a class="nav nav-next" href="https://rickdgray.github.io/notes/dev/aws/" title="">Next -  <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
 </nav><footer></footer>
 </main>
 <div class="sidebar">
@@ -160,10 +152,13 @@
 <li class="parent"><a href="https://rickdgray.github.io/notes/dev/">Devs</a>
   
 <ul class="sub-menu">
+<li class=""><a href="https://rickdgray.github.io/notes/dev/aws/"></a></li>
+<li class=""><a href="https://rickdgray.github.io/notes/dev/interviewing/"></a></li>
+<li class=""><a href="https://rickdgray.github.io/notes/dev/layoffs/"></a></li>
 <li class=""><a href="https://rickdgray.github.io/notes/dev/csharp/">C# Cheatsheet</a></li>
 <li class=""><a href="https://rickdgray.github.io/notes/dev/csharp-for-newbies/">C# For Newbies</a></li>
 <li class=""><a href="https://rickdgray.github.io/notes/dev/choose-a-license/">Choose a License</a></li>
-<li class=""><a href="https://rickdgray.github.io/notes/dev/db-migrations/">DB Migrations</a></li>
+<li class=""><a href="https://rickdgray.github.io/notes/dev/database/">Database</a></li>
 <li class=""><a href="https://rickdgray.github.io/notes/dev/git/">Git</a></li>
 <li class=""><a href="https://rickdgray.github.io/notes/dev/hard-drive-testing/">HDD Testing</a></li>
 <li class=""><a href="https://rickdgray.github.io/notes/dev/networking/">Networking</a></li>
@@ -172,22 +167,6 @@
 <li class=""><a href="https://rickdgray.github.io/notes/dev/ssl-certs/">SSL Certs</a></li>
 <li class=""><a href="https://rickdgray.github.io/notes/dev/system-admin/">System Admin</a></li>
 <li class="active"><a href="https://rickdgray.github.io/notes/dev/terminal/">Terminal</a></li>
-</ul>
-  
-</li>
-
-<li class=""><a href="https://rickdgray.github.io/notes/games/">Games</a>
-  
-<ul class="sub-menu">
-<li class=""><a href="https://rickdgray.github.io/notes/games/advance-wars/">Advance Wars</a></li>
-</ul>
-  
-</li>
-
-<li class=""><a href="https://rickdgray.github.io/notes/other/">Others</a>
-  
-<ul class="sub-menu">
-<li class=""><a href="https://rickdgray.github.io/notes/other/october/">October</a></li>
 </ul>
   
 </li>
