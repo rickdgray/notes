@@ -1,3 +1,8 @@
+---
+title: AWS
+author: Rick Gray
+year: 2023
+---
 # AWS CLI
 Credential fetching script
 Improvements to be made:

@@ -7,31 +7,13 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://rickdgray.github.io/notes/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title></title>
+      <title>AWS</title>
       <link>https://rickdgray.github.io/notes/dev/aws/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://rickdgray.github.io/notes/dev/aws/</guid>
       <description>AWS CLI Credential fetching script Improvements to be made:
 Use Write-Output instead as Write-Host cannot be piped to other processes if ((Get-Command -Name aws.exe | measure).Count -eq 0) { Write-Host &amp;#34;AWS CLI not installed.&amp;#34; Write-Host &amp;#34;Download and install from https://awscli.amazonaws.com/AWSCLIV2.msi&amp;#34; exit 1; } # Constants $configFile = &amp;#34;$env:USERPROFILE\.aws\config&amp;#34; $settingsFile = &amp;#34;$env:USERPROFILE\.aws\settings&amp;#34; $startUrl = &amp;#34;https://example.awsapps.com/start#&amp;#34; $AwsMyRoleId = &amp;#34;123456789000&amp;#34; $region = &amp;#34;us-east-1&amp;#34; $format = &amp;#34;json&amp;#34; $roleName = &amp;#34;MyRole&amp;#34; $grantType = &amp;#34;urn:ietf:params:oauth:grant-type:device_code&amp;#34; [datetime]$epoch = &amp;#39;1970-01-01 00:00:00&amp;#39; $profileContent = @&amp;#34; [default] sso_session = sso sso_account_id = $AwsMyRoleId sso_role_name = $roleName region = $region output = $format [sso-session sso] sso_start_url = $startUrl sso_region = $region sso_registration_scopes = sso:account:access &amp;#34;@ # Create the config file # This can also be done manually by running &amp;#34;aws configure sso&amp;#34; if (!</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://rickdgray.github.io/notes/dev/interviewing/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://rickdgray.github.io/notes/dev/interviewing/</guid>
-      <description>Questions for the Interviewer How do you feel the company rewards achievement? This is my favorite question because it seems to produce a different reaction every time, sometimes with them squirming uncomfortably. Some interviewers will give a generic bullshit answer: there are no rewards. This is OK at best, but if everything else is good including salary, I&amp;rsquo;ll move forward. Many interviewers are caught off guard because they don&amp;rsquo;t immediately have a great answer and have to think about it: there are no rewards, and also the interviewer sucks.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://rickdgray.github.io/notes/dev/layoffs/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://rickdgray.github.io/notes/dev/layoffs/</guid>
-      <description>People who add value are generally safer than people who manage them. It&amp;rsquo;s always easier to, in the short term, fire managers without affecting the amount of work that gets done too much. Also, upper management postpones laying off the people that are the hardest to rehire as long as possible. An intern is easier to find than a good manager who is easier to find than a good staff level engineer.</description>
     </item>
     
     <item>
@@ -99,6 +81,24 @@ Common Commands Alias Command g git ga git add gaa git add &amp;ndash;all gapa g
       <guid>https://rickdgray.github.io/notes/dev/hard-drive-testing/</guid>
       <description>THIS NEEDS FORMATTING
 Introduction Don&amp;rsquo;t skip this section. It may be boring, but it will give you the background and reason why I say certain things later. This article is written for platter drives, although much, but not all, applies to the SSD drives too. There are surprisingly very few studies published on platter drive failures. Google did one, Backblaze has made several informative blog posts, and there was one published on usenix.</description>
+    </item>
+    
+    <item>
+      <title>Interviewing</title>
+      <link>https://rickdgray.github.io/notes/dev/interviewing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://rickdgray.github.io/notes/dev/interviewing/</guid>
+      <description>Questions for the Interviewer How do you feel the company rewards achievement? This is my favorite question because it seems to produce a different reaction every time, sometimes with them squirming uncomfortably. Some interviewers will give a generic bullshit answer: there are no rewards. This is OK at best, but if everything else is good including salary, I&amp;rsquo;ll move forward. Many interviewers are caught off guard because they don&amp;rsquo;t immediately have a great answer and have to think about it: there are no rewards, and also the interviewer sucks.</description>
+    </item>
+    
+    <item>
+      <title>Layoffs</title>
+      <link>https://rickdgray.github.io/notes/dev/layoffs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://rickdgray.github.io/notes/dev/layoffs/</guid>
+      <description>People who add value are generally safer than people who manage them. It&amp;rsquo;s always easier to, in the short term, fire managers without affecting the amount of work that gets done too much. Also, upper management postpones laying off the people that are the hardest to rehire as long as possible. An intern is easier to find than a good manager who is easier to find than a good staff level engineer.</description>
     </item>
     
     <item>
