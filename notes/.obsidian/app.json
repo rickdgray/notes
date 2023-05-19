@@ -1,0 +1,15 @@
+{
+  "livePreview": false,
+  "showFrontmatter": true,
+  "showLineNumber": true,
+  "spellcheck": true,
+  "autoPairMarkdown": false,
+  "autoPairBrackets": false,
+  "trashOption": "none",
+  "promptDelete": false,
+  "showUnsupportedFiles": true,
+  "readableLineLength": false,
+  "defaultViewMode": "preview",
+  "useMarkdownLinks": true,
+  "alwaysUpdateLinks": true
+}
