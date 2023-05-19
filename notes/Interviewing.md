@@ -1,3 +1,8 @@
+---
+title: Interviewing
+author: Rick Gray
+year: 2023
+---
 # Questions for the Interviewer
 1) **How do you feel the company rewards achievement?**
 This is my favorite question because it seems to produce a different reaction every time, sometimes with them squirming uncomfortably.
