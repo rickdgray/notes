@@ -1,8 +1,36 @@
 ---
-title: DB Migrations
+title: Database
 author: Rick Gray
 year: 2023
 ---
+# EF Migrations
+The migration tool has to be able to build the DbContext to know what's in it.
+```bash
+dotnet add package Microsoft.EntityFrameworkCore.Design
+```
+Add a new migration
+```powershell
+param(
+    [Parameter(Mandatory=$true)]
+    [string] $MigrationName
+)
+
+dotnet ef --startup-project ../App.Api/ migrations add $MigrationName
+```
+Update database
+```powershell
+param(
+    [string] $TargetMigration
+)
+
+# TODO print names of last 5 migrations to allow user to input
+if ([string]::IsNullOrEmpty($TargetMigration)) {
+    dotnet ef --startup-project ../App.Api/ database update
+}
+else {
+    dotnet ef --startup-project ../App.Api/ database update $TargetMigration
+}
+```
 # DB Backup
 PowerShell script for automating the creation of new databases in a local environment setting.
 ```powershell

@@ -3,6 +3,25 @@ title: System Admin
 author: Rick Gray
 year: 2023
 ---
+# NGINX
+Good default for security headers
+```
+# Security headers
+add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
+add_header Content-Security-Policy 'frame-ancestors https://mywebapp.mywebsite.example';
+add_header X-Content-Type-Options nosniff;
+add_header Content-Security-Policy "default-src 'self' www.google-analytics.com ajax.googleapis.com www.google.com google.com gstatic.com www.gstatic.com connect.facebook.net facebook.com;";
+add_header X-XSS-Protection "1; mode=block";
+add_header Referrer-Policy "origin";
+```
+[413 Request Entity Too Large](https://nginx.org/en/docs/http/ngx_http_core_module.html#client_max_body_size)
+Allow large uploads; default is only 1MB
+```
+location /uploads {
+    ...
+    client_max_body_size 100M;
+}
+```
 # Set Permissions Recursive
 ```bash
 sudo chown -R www-data:www-data ./*
@@ -43,4 +62,9 @@ ufw allow 11200:11299/udp
 # to do a quick test with netcat
 nc -l 1701
 # then use telnet from windows and send a message
+```
+# NFS
+To autoconnect client to nfs at startup, append this line to the `/etc/fstab` file:
+```
+hostname.com:/mnt/datastore/share/username/folder /mnt/nfs nfs timeo=500,intr,_netdev 0 0
 ```

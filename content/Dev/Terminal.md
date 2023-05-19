@@ -21,15 +21,7 @@ function edit {
 	& "C:/Program Files/Notepad++/notepad++.exe" $Filename
 }
 
-function which {
-	param (
-		$Command
-	)
-	
-	if ($PSBoundParameters.ContainsKey('Command')) {
-		Write-Host (Get-Module (Get-Command $Command).Source).Path
-	}
-}
+New-Alias which get-command
 
 clear
 ```
