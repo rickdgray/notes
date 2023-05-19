@@ -7,12 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://rickdgray.github.io/notes/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Advance Wars</title>
-      <link>https://rickdgray.github.io/notes/games/advance-wars/</link>
+      <title></title>
+      <link>https://rickdgray.github.io/notes/dev/aws/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://rickdgray.github.io/notes/games/advance-wars/</guid>
-      <description>flowchart TD 1[1-3] 4A[4A-5A] 4M[4M-7M] 10F[10] 11F[11] 12[12-14] 15[15-18] 19[19-21] 19A[19-21] 19S[19-21] A[Unlock Grit] B[Unlock Sonja] C[Unlock Drake] D[Unlock Eagle] E[Unlock Kanbei] F[Unlock Nell] G[Unlock Sturm] X[Unlock all COs] Z[Advance Campaign Clear] 1 --&amp;gt;|Andy Branch| 4A 1 --&amp;gt;|Max Branch| 4M 4A --&amp;gt; 6A 6A --&amp;gt;|HQ Cap| 8 6A --&amp;gt;|Rout| 7A 4M --&amp;gt; A 7A --&amp;gt; 8 A --&amp;gt; 8 8 --&amp;gt; 9 9 --&amp;gt; 10 9 --&amp;gt;|Clear in 8 days or less| 10F 10 --&amp;gt; 11 10F --&amp;gt; 11 10F --&amp;gt;|Clear in 10 days or less| 11F 11 --&amp;gt; 15 11F --&amp;gt; 15 11F --&amp;gt;|Clear in 12 days or less| 12 12 --&amp;gt; B B --&amp;gt; 15 15 --&amp;gt;|Only use Andy| 19A 15 --&amp;gt;|Only use Sami| 19S 15 --&amp;gt; 19 19A --&amp;gt; C 19S --&amp;gt; 22 22 --&amp;gt; D 19 &amp;amp; C &amp;amp; D --&amp;gt; E X --&amp;gt; G G &amp;amp; Z --&amp;gt; F style A stroke:#69a2ff,stroke-width:3px style B stroke:#69a2ff,stroke-width:3px style C stroke:#69a2ff,stroke-width:3px style D stroke:#69a2ff,stroke-width:3px style E stroke:#69a2ff,stroke-width:3px style F stroke:#69a2ff,stroke-width:3px style G stroke:#69a2ff,stroke-width:3px style 7A stroke:#ff696e,stroke-width:3px style 12 stroke:#ff696e,stroke-width:3px style 22 stroke:#ff696e,stroke-width:3px </description>
+      <guid>https://rickdgray.github.io/notes/dev/aws/</guid>
+      <description>AWS CLI Credential fetching script Improvements to be made:
+Use Write-Output instead as Write-Host cannot be piped to other processes if ((Get-Command -Name aws.exe | measure).Count -eq 0) { Write-Host &amp;#34;AWS CLI not installed.&amp;#34; Write-Host &amp;#34;Download and install from https://awscli.amazonaws.com/AWSCLIV2.msi&amp;#34; exit 1; } # Constants $configFile = &amp;#34;$env:USERPROFILE\.aws\config&amp;#34; $settingsFile = &amp;#34;$env:USERPROFILE\.aws\settings&amp;#34; $startUrl = &amp;#34;https://example.awsapps.com/start#&amp;#34; $AwsMyRoleId = &amp;#34;123456789000&amp;#34; $region = &amp;#34;us-east-1&amp;#34; $format = &amp;#34;json&amp;#34; $roleName = &amp;#34;MyRole&amp;#34; $grantType = &amp;#34;urn:ietf:params:oauth:grant-type:device_code&amp;#34; [datetime]$epoch = &amp;#39;1970-01-01 00:00:00&amp;#39; $profileContent = @&amp;#34; [default] sso_session = sso sso_account_id = $AwsMyRoleId sso_role_name = $roleName region = $region output = $format [sso-session sso] sso_start_url = $startUrl sso_region = $region sso_registration_scopes = sso:account:access &amp;#34;@ # Create the config file # This can also be done manually by running &amp;#34;aws configure sso&amp;#34; if (!</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://rickdgray.github.io/notes/dev/interviewing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://rickdgray.github.io/notes/dev/interviewing/</guid>
+      <description>Questions for the Interviewer How do you feel the company rewards achievement? This is my favorite question because it seems to produce a different reaction every time, sometimes with them squirming uncomfortably. Some interviewers will give a generic bullshit answer: there are no rewards. This is OK at best, but if everything else is good including salary, I&amp;rsquo;ll move forward. Many interviewers are caught off guard because they don&amp;rsquo;t immediately have a great answer and have to think about it: there are no rewards, and also the interviewer sucks.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://rickdgray.github.io/notes/dev/layoffs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://rickdgray.github.io/notes/dev/layoffs/</guid>
+      <description>People who add value are generally safer than people who manage them. It&amp;rsquo;s always easier to, in the short term, fire managers without affecting the amount of work that gets done too much. Also, upper management postpones laying off the people that are the hardest to rehire as long as possible. An intern is easier to find than a good manager who is easier to find than a good staff level engineer.</description>
     </item>
     
     <item>
@@ -50,13 +69,15 @@ bool? nullableBool; If you don&amp;rsquo;t want your classes to be nullable by d
     </item>
     
     <item>
-      <title>DB Migrations</title>
-      <link>https://rickdgray.github.io/notes/dev/db-migrations/</link>
+      <title>Database</title>
+      <link>https://rickdgray.github.io/notes/dev/database/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://rickdgray.github.io/notes/dev/db-migrations/</guid>
-      <description>DB Backup PowerShell script for automating the creation of new databases in a local environment setting.
-#Requires -RunAsAdministrator # If SqlServer module isn&amp;#39;t installed if (!(Get-module SqlServer)) { Write-Host &amp;#34;Installing SqlServer module...&amp;#34; Install-Module SqlServer } Write-Host &amp;#34;Loading SqlServer module...&amp;#34; Import-Module SqlServer $localServer = &amp;#34;(localdb)\MSSQLLocalDB&amp;#34; Write-Host &amp;#34;Select database to copy:&amp;#34; $database = Get-SqlDatabase -ServerInstance $localServer | Where-Object { $_.Owner -ne &amp;#34;sa&amp;#34; } | Out-GridView -Title &amp;#34;Select database to copy&amp;#34; -PassThru if ($database -eq $null) { Write-Error &amp;#34;A database was not selected.</description>
+      <guid>https://rickdgray.github.io/notes/dev/database/</guid>
+      <description>EF Migrations The migration tool has to be able to build the DbContext to know what&amp;rsquo;s in it.
+dotnet add package Microsoft.EntityFrameworkCore.Design Add a new migration
+param( [Parameter(Mandatory=$true)] [string] $MigrationName ) dotnet ef --startup-project ../App.Api/ migrations add $MigrationName Update database
+param( [string] $TargetMigration ) # TODO print names of last 5 migrations to allow user to input if ([string]::IsNullOrEmpty($TargetMigration)) { dotnet ef --startup-project ../App.Api/ database update } else { dotnet ef --startup-project .</description>
     </item>
     
     <item>
@@ -100,22 +121,13 @@ Addresses Hosts Netmask Amount of a Class C /30 4 2 255.255.255.252 /29 8 6 255.
     </item>
     
     <item>
-      <title>October</title>
-      <link>https://rickdgray.github.io/notes/other/october/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://rickdgray.github.io/notes/other/october/</guid>
-      <description>October is the best month leif erikson day pumpkin pie halloween fall weather start of colder weather throughout the year begining of the holidays autumn colors for clothing colder clothes look better able to skate and do other outside things candy greenery takes a change of color horror movies/games haunted houses game releases gets dark earlier; can do night things under stars gets light earlier; easier to wake up hot chocolate/roasted marshmallows </description>
-    </item>
-    
-    <item>
       <title>Software Engineering</title>
       <link>https://rickdgray.github.io/notes/dev/software-engineering/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://rickdgray.github.io/notes/dev/software-engineering/</guid>
-      <description>Object Oriented Programming [!Inheritance Sucks] Composition is better than inheritance
-Backend for Frontend (BFF) https://learn.microsoft.com/en-us/azure/architecture/patterns/backends-for-frontends</description>
+      <description>The Mythical Man-Month The Mythical Man-Month Also known as Brooks&amp;rsquo;s law. Reasons why the man-month doesn&amp;rsquo;t work:
+Ramp up time for a new employee pulls time away from existing developers. Communication overhead is combinatorially explosive Not all work is divisible; too many cooks; nine women can&amp;rsquo;t make a baby in one month Second-System Effect &amp;ldquo;The tendency of small, elegant, and successful systems to be succeeded by over-engineered, bloated systems, due to inflated expectations and overconfidence.</description>
     </item>
     
     <item>
@@ -134,8 +146,9 @@ Backend for Frontend (BFF) https://learn.microsoft.com/en-us/azure/architecture/
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://rickdgray.github.io/notes/dev/system-admin/</guid>
-      <description>Set Permissions Recursive sudo chown -R www-data:www-data ./* sudo find . -type d -exec chmod 0755 {} \; sudo find . -type f -exec chmod 0644 {} \; sudo systemctl restart apache2.service Certbot Plugin Does not work with the redirect to github I have in place right now.
-sudo certbot --nginx -d rickdgray.com -d www.rickdgray.com -d dev.rickdgray.com -d coder.rickdgray.com -d guac.rickdgray.com -d jambot.rickdgray.com -d nextcloud.rickdgray.com -d speedtest.rickdgray.com Manual sudo certbot certonly --manual -d rickdgray.</description>
+      <description>NGINX Good default for security headers
+# Security headersadd_header Strict-Transport-Security &amp;#34;max-age=31536000; includeSubDomains; preload&amp;#34; always;add_header Content-Security-Policy &amp;#39;frame-ancestors https://mywebapp.mywebsite.example&amp;#39;;add_header X-Content-Type-Options nosniff;add_header Content-Security-Policy &amp;#34;default-src &amp;#39;self&amp;#39; www.google-analytics.com ajax.googleapis.com www.google.com google.com gstatic.com www.gstatic.com connect.facebook.net facebook.com;&amp;#34;;add_header X-XSS-Protection &amp;#34;1; mode=block&amp;#34;;add_header Referrer-Policy &amp;#34;origin&amp;#34;; 413 Request Entity Too Large Allow large uploads; default is only 1MB
+location /uploads {...client_max_body_size 100M;} Set Permissions Recursive sudo chown -R www-data:www-data ./* sudo find .</description>
     </item>
     
     <item>
@@ -144,7 +157,7 @@ sudo certbot --nginx -d rickdgray.com -d www.rickdgray.com -d dev.rickdgray.com 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://rickdgray.github.io/notes/dev/terminal/</guid>
-      <description>Windows Microsoft.PowerShell_profile.ps1 Import-Module posh-git oh-my-posh init pwsh --config &amp;#34;~/Documents/PowerShell/theme.omp.json&amp;#34; | Invoke-Expression function repos { &amp;amp; cd ~/source/repos } function edit { param ( $Filename ) &amp;amp; &amp;#34;C:/Program Files/Notepad++/notepad++.exe&amp;#34; $Filename } function which { param ( $Command ) if ($PSBoundParameters.ContainsKey(&amp;#39;Command&amp;#39;)) { Write-Host (Get-Module (Get-Command $Command).Source).Path } } clear Generate theme $alignment = &amp;#39;left&amp;#39; $textColorPrimary = &amp;#39;#ffffff&amp;#39; $textColorSecondary = &amp;#39;#ff0000&amp;#39; $style = &amp;#39;plain&amp;#39; $type = &amp;#39;prompt&amp;#39; $username = @{ &amp;#39;foreground&amp;#39; = $textColorPrimary &amp;#39;style&amp;#39; = $style &amp;#39;template&amp;#39; = &amp;#34;&amp;lt;$textColorSecondary&amp;gt;┏[&amp;lt;/&amp;gt;{{ .</description>
+      <description>Windows Microsoft.PowerShell_profile.ps1 Import-Module posh-git oh-my-posh init pwsh --config &amp;#34;~/Documents/PowerShell/theme.omp.json&amp;#34; | Invoke-Expression function repos { &amp;amp; cd ~/source/repos } function edit { param ( $Filename ) &amp;amp; &amp;#34;C:/Program Files/Notepad++/notepad++.exe&amp;#34; $Filename } New-Alias which get-command clear Generate theme $alignment = &amp;#39;left&amp;#39; $textColorPrimary = &amp;#39;#ffffff&amp;#39; $textColorSecondary = &amp;#39;#ff0000&amp;#39; $style = &amp;#39;plain&amp;#39; $type = &amp;#39;prompt&amp;#39; $username = @{ &amp;#39;foreground&amp;#39; = $textColorPrimary &amp;#39;style&amp;#39; = $style &amp;#39;template&amp;#39; = &amp;#34;&amp;lt;$textColorSecondary&amp;gt;┏[&amp;lt;/&amp;gt;{{ .UserName }}&amp;lt;$textColorSecondary&amp;gt;]&amp;lt;/&amp;gt;&amp;#34; &amp;#39;type&amp;#39; = &amp;#39;session&amp;#39; } $git = @{ &amp;#39;foreground&amp;#39; = $textColorPrimary &amp;#39;style&amp;#39; = $style &amp;#39;template&amp;#39; = &amp;#34;&amp;lt;$textColorSecondary&amp;gt;[&amp;lt;/&amp;gt;{{ .</description>
     </item>
     
   </channel>
