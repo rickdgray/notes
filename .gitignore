@@ -1,5 +1,2 @@
-public/
-resources/
-.hugo_build.lock
-notes/.obsidian/workspace.json
-notes/.trash/
+.obsidian/workspace.json
+.trash/
