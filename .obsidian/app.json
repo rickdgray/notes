@@ -1,6 +1,6 @@
 {
   "livePreview": false,
-  "showFrontmatter": true,
+  "showFrontmatter": false,
   "showLineNumber": true,
   "spellcheck": true,
   "autoPairMarkdown": false,
@@ -11,5 +11,6 @@
   "readableLineLength": false,
   "defaultViewMode": "preview",
   "useMarkdownLinks": true,
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "autoConvertHtml": false
 }
