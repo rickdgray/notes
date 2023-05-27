@@ -12,5 +12,11 @@
   "defaultViewMode": "preview",
   "useMarkdownLinks": true,
   "alwaysUpdateLinks": true,
-  "autoConvertHtml": false
+  "autoConvertHtml": false,
+  "pdfExportSettings": {
+    "pageSize": "Letter",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  }
 }
