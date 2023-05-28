@@ -1,7 +1,6 @@
 ---
 title: System Admin
-author: Rick Gray
-year: 2023
+lastmod: 2023-05-27T20:24:05-05:00
 ---
 # NGINX
 Good default for security headers
