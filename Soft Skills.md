@@ -1,6 +1,6 @@
 ---
 title: Soft Skills
-lastmod: 2023-05-27T21:56:39-05:00
+lastmod: 2023-05-28T08:07:50-05:00
 ---
 # Soft Skills
 Life lessons in communication I had to learn the hard way.
