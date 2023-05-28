@@ -1,7 +1,6 @@
 ---
-title: Tiramisu
-author: Rick Gray
-year: 2023
+title: "Tiramisu That's Actually Not Soggy"
+lastmod: 2023-05-27T21:48:56-05:00
 ---
 Anyone who tells you they have a better tiramisu recipe is wrong, especially the purists who use the original recipe.
 # Details

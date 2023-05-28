@@ -1,3 +1,7 @@
+---
+title: Database
+lastmod: 2023-05-27T21:49:40-05:00
+---
 # Migrations
 I added this to my powershell profile to make builds easier
 ```powershell

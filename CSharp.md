@@ -1,7 +1,6 @@
 ---
-title: C# Cheatsheet
-author: Rick Gray
-year: 2023
+title: CSharp
+lastmod: 2023-05-27T21:48:05-05:00
 ---
 I'm tired of having to look up simple things that I can't immediately remember.
 # Configuration

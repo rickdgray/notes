@@ -1,7 +1,6 @@
 ---
 title: AWS
-author: Rick Gray
-year: 2023
+lastmod: 2023-05-27T21:48:35-05:00
 ---
 # AWS CLI
 Credential fetching script

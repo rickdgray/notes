@@ -1,7 +1,6 @@
 ---
 title: Interviewing
-author: Rick Gray
-year: 2023
+lastmod: 2023-05-27T21:47:14-05:00
 ---
 # Questions for the Interviewer
 1) **How do you feel the company rewards achievement?**

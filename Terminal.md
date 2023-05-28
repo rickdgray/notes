@@ -1,7 +1,6 @@
 ---
 title: Terminal
-author: Rick Gray
-year: 2023
+lastmod: 2023-05-27T21:46:38-05:00
 ---
 # Windows
 ## Microsoft.PowerShell_profile.ps1

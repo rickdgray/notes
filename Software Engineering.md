@@ -1,7 +1,6 @@
 ---
 title: Software Engineering
-author: Rick Gray
-year: 2023
+lastmod: 2023-05-27T21:46:48-05:00
 ---
 # The Mythical Man-Month
 ## The Mythical Man-Month

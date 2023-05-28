@@ -1,7 +1,6 @@
 ---
 title: Database
-author: Rick Gray
-year: 2023
+lastmod: 2023-05-27T21:47:24-05:00
 ---
 # EF Migrations
 The migration tool has to be able to build the DbContext to know what's in it.

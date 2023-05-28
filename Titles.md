@@ -1,7 +1,6 @@
 ---
 title: Titles
-author: Rick Gray
-year: 2023
+lastmod: 2023-05-27T21:46:28-05:00
 ---
 # What to Expect
 Here's the gist of what to expect for each title.

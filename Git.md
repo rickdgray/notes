@@ -1,7 +1,6 @@
 ---
 title: Git
-author: Rick Gray
-year: 2023
+lastmod: 2023-05-27T21:47:21-05:00
 ---
 # Git
 Pull submodules after clone

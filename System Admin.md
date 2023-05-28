@@ -1,6 +1,6 @@
 ---
 title: System Admin
-lastmod: 2023-05-27T20:24:05-05:00
+lastmod: 2023-05-27T21:46:14-05:00
 ---
 # NGINX
 Good default for security headers

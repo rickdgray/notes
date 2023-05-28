@@ -1,7 +1,6 @@
 ---
 title: Soft Skills
-author: Rick Gray
-year: 2023
+lastmod: 2023-05-27T21:46:51-05:00
 ---
 Life lessons in communication I had to learn the hard way.
 # Understand first, then be understood

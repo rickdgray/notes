@@ -1,7 +1,6 @@
 ---
-title: C# For Newbies
-author: Rick Gray
-year: 2023
+title: CSharp For Newbies
+lastmod: 2023-05-27T21:47:27-05:00
 ---
 # General Syntax
 Microsoft encourages the use of `var`. They've gone back and forth on this a few times, but I think they've settled on `var` for good now.

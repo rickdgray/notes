@@ -1,7 +1,6 @@
 ---
-title: Choose a License
-author: Rick Gray
-year: 2023
+title: Software Licenses
+lastmod: 2023-05-27T21:48:25-05:00
 ---
 * GPL
 	- My default choice.

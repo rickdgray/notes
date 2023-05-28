@@ -1,7 +1,6 @@
 ---
 title: Networking
-author: Rick Gray
-year: 2023
+lastmod: 2023-05-27T21:47:06-05:00
 ---
 # Subnet Mask
 More info [here](https://www.aelius.com/njh/subnet_sheet.html)

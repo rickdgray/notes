@@ -1,7 +1,6 @@
 ---
 title: Italian Soda
-author: Rick Gray
-year: 2023-05-27
+lastmod: 2023-05-27T21:49:06-05:00
 ---
 # Details
 | Cook Time | Yield | Serves |
