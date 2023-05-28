@@ -17,12 +17,6 @@ Windows-style backslashes will not work. If you run the above command by pasting
 ```bash
 echo "test" | gpg --clearsign
 ```
-## Github Actions
-You can impersonate the github actions bot with this name and email:
-```bash
-git config --global user.name "github-actions[bot]"
-git config --global user.email "github-actions[bot]@users.noreply.github.com"
-```
 This makes your commit history look nice on github if you need to make commits from an action.
 ## Gitflow
 To review:
