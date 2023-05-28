@@ -1,5 +1,5 @@
 ---
 title: {{title}}
-author: Rick Gray
-year: {{date}}
+lastmod: {{date}}
 ---
+# {{title}}

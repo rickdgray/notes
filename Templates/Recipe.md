@@ -1,21 +1,21 @@
 ---
 title: {{title}}
-author: Rick Gray
-year: {{date}}
+lastmod: {{date}}
 ---
-# Details
+# {{title}}
+## Details
 | Cook Time | Yield | Serves |
 | --- | --- | --- |
 | ? | ? | ? |
 
-# Ingredients
+## Ingredients
 * 
 
-# Directions
+## Directions
 1. 
 
-# Notes
+## Notes
 Notes here
 
-## Nutrition
+### Nutrition
 To be determined

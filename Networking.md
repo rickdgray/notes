@@ -1,8 +1,9 @@
 ---
 title: Networking
-lastmod: 2023-05-27T21:47:06-05:00
+lastmod: 2023-05-27T21:57:27-05:00
 ---
-# Subnet Mask
+# Networking
+## Subnet Mask
 More info [here](https://www.aelius.com/njh/subnet_sheet.html)
 
 | Addresses | Hosts | Netmask | Amount of a Class C |

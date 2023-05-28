@@ -1,8 +1,9 @@
 ---
 title: AWS
-lastmod: 2023-05-27T21:48:35-05:00
+lastmod: 2023-05-27T22:02:34-05:00
 ---
-# AWS CLI
+# AWS
+## AWS CLI
 Credential fetching script
 Improvements to be made:
 * Use `Write-Output` instead as `Write-Host` cannot be piped to other processes

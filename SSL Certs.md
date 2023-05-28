@@ -1,7 +1,8 @@
 ---
 title: SSL Certs
-lastmod: 2023-05-27T21:46:44-05:00
+lastmod: 2023-05-27T21:55:23-05:00
 ---
+# SSL Certs
 Old script to generate certificate
 ```powershell
 #create ca key

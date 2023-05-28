@@ -1,6 +1,6 @@
 ---
 title: October
-lastmod: 2023-05-27T21:49:11-05:00
+lastmod: 2023-05-27T22:13:02-05:00
 ---
 # October is the best month
 * leif erikson day

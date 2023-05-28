@@ -1,8 +1,9 @@
 ---
 title: Database
-lastmod: 2023-05-27T21:49:40-05:00
+lastmod: 2023-05-27T22:02:46-05:00
 ---
-# Migrations
+# Database
+## Migrations
 I added this to my powershell profile to make builds easier
 ```powershell
 $env:ASPNETCORE_ENVIRONMENT='Local'

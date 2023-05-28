@@ -1,8 +1,9 @@
 ---
 title: Advance Wars
-lastmod: 2023-05-27T21:49:21-05:00
+lastmod: 2023-05-27T22:09:40-05:00
 ---
-# Advance Wars Campaign Unlock Flowchart
+# Advance Wars
+## Advance Wars Campaign Unlock Flowchart
 
 <br>
 
