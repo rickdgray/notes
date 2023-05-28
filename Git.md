@@ -1,6 +1,6 @@
 ---
 title: Git
-lastmod: 2023-05-27T21:59:58-05:00
+lastmod: 2023-05-28T08:26:50-05:00
 ---
 # Git
 ## Submodules
@@ -17,6 +17,13 @@ Windows-style backslashes will not work. If you run the above command by pasting
 ```bash
 echo "test" | gpg --clearsign
 ```
+## Github Actions
+You can impersonate the github actions bot with this name and email:
+```bash
+git config --global user.name "github-actions[bot]"
+git config --global user.email "github-actions[bot]@users.noreply.github.com"
+```
+This makes your commit history look nice on github if you need to make commits from an action.
 ## Gitflow
 To review:
 https://jeffkreeftmeijer.com/git-flow/
