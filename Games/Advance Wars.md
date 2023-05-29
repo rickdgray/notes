@@ -5,8 +5,6 @@ lastmod: 2023-05-27T22:09:40-05:00
 # Advance Wars
 ## Advance Wars Campaign Unlock Flowchart
 
-<br>
-
 ```mermaid
 flowchart TD
 
