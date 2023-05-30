@@ -3,6 +3,26 @@ title: Networking
 lastmod: 2023-05-27T21:57:27-05:00
 ---
 # Networking
+## Network Diagram
+Work in progress:
+```mermaid
+flowchart TD
+
+1{{Cloud}}
+2[[Public DNS]]
+3["Main repo\nrickdgray.github.io"]
+4["pfSense\n(routing)"]
+5(["pfSense\n(private DNS)"])
+6["Devnotes repo\nrickdgray.github.io/dev-notes"]
+7["NGINX\nnginx.internal.rickdgray.com"]
+
+1-->2
+2-->|rickdgray.com redirect to www|2
+2-->|www.rickdgray.com|3
+2-->|*.rickdgray.com|4
+2-->|devnotes.rickdgray.com|6
+4-->|ports 80 and 443|7
+```
 ## Subnet Mask
 More info [here](https://www.aelius.com/njh/subnet_sheet.html)
 

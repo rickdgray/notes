@@ -17,7 +17,6 @@ Windows-style backslashes will not work. If you run the above command by pasting
 ```bash
 echo "test" | gpg --clearsign
 ```
-This makes your commit history look nice on github if you need to make commits from an action.
 ## Gitflow
 To review:
 https://jeffkreeftmeijer.com/git-flow/
