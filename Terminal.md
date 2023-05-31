@@ -1,16 +1,30 @@
 ---
 title: Terminal
-lastmod: 2023-05-27T21:54:45-05:00
+lastmod: 2023-05-31T14:00:56-05:00
 ---
 # Terminal
 ## Windows
-### Microsoft.PowerShell_profile.ps1
+### PowerShell
+This is my profile script for [PowerShell 7](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows). If you're not familiar with PowerShell, it's like `.bashrc`. It depends on four libraries:
+* [posh-git](http://dahlbyk.github.io/posh-git/)
+* [oh-my-posh](https://ohmyposh.dev/)
+* [1Password CLI](https://1password.com/downloads/command-line/)
+* [GitHub Copilot CLI](https://githubnext.com/projects/copilot-cli) (More info below)
 ```powershell
 Import-Module posh-git
 oh-my-posh init pwsh --config "~/Documents/PowerShell/theme.omp.json" | Invoke-Expression
+op completion powershell | Out-String | Invoke-Expression
 
 function repos {
 	& cd ~/source/repos
+}
+
+function e {
+	param (
+		$Path = "."
+	)
+	
+	& explorer.exe $Path
 }
 
 function edit {
@@ -66,6 +80,7 @@ clear
 ### GitHub Copilot CLI
 Install the npm package [here](https://www.npmjs.com/package/@githubnext/github-copilot-cli).  The above functions were pulled from [here](https://www.hanselman.com/blog/github-copilot-for-cli-for-powershell).
 ### Generate theme
+This is the script I use to generate my oh-my-posh theme.
 ```powershell
 $alignment = 'left'
 $textColorPrimary = '#ffffff'

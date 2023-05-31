@@ -1,8 +1,15 @@
 ---
 title: Github
-lastmod: 2023-05-28
+lastmod: 2023-05-31T15:32:01-05:00
 ---
 # Github
+## 1Password Integration
+Each repo must be informed of what GitHub account to use to properly authenticate and verify signatures. See [here](https://developer.1password.com/docs/ssh/agent/advanced/#use-multiple-github-accounts).
+```bash
+git remote set-url origin <host>:<workplace>/<repo>.git
+# example:
+git remote set-url origin rickdgray:rickdgray/notes.git
+```
 ## Verified Commits from Linux
 1. Install git and pass
 ```
