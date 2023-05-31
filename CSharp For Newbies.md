@@ -1,7 +1,7 @@
 ---
 title: CSharp For Newbies
 friendlyTitle: C# For Newbies
-lastmod: 2023-05-27T22:14:39-05:00
+lastmod: 2023-05-30T17:58:20-05:00
 ---
 # C# for Newbies
 Stuff I wish I knew when I started
@@ -79,6 +79,7 @@ class student
 If you don't wanna track changes, such as when only reading data from the database, use `AsNoTracking()`.
 
 ## Serialization
+### Newtonsoft
 Nearly all `json` serializing is done using [Newtonsoft](https://www.newtonsoft.com/json), also called Json.NET. For years Microsoft had not written their own and, surprisingly, a lot of their official code and documentation rely on it. They have created their own now, but adoption has been *very* slow. Newtonsoft is still the dominate option and I realistically don't expect that to change.
 
 ## Dependency Injection

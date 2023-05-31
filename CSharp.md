@@ -1,7 +1,7 @@
 ---
 title: CSharp
 friendlyTitle: C#
-lastmod: 2023-05-28T00:01:35-05:00
+lastmod: 2023-05-30T18:08:54-05:00
 ---
 # C#
 I'm tired of having to look up simple things that I can't immediately remember.
@@ -142,30 +142,60 @@ while (reader.Read())
 ```csharp
 // TBD
 ```
-## String Literal Variants
-### Composite
+## Strings
+### String Linting by Language
+In .NET 7, you can [inform Visual Studio](https://www.youtube.com/watch?v=Y2YOaqSAJAQ) about what your strings are using a decorator. Doing so will actually give you convenient intellisense.
+```csharp
+void DoSomething(DateTime dateTime,
+	[StringSyntax(StringSyntaxAttribute.DateTimeFormat)] string format)
+{
+	// do something
+}
+
+DoSomething(DateTime.Now, "");
+                        // ^ here you will have intellisense on datetime formats!
+
+DateTime.Now.ToString("");
+					// ^ ToString() is now overridden to provide this as well
+
+[StringSyntax(StringSyntaxAttribute.Json)]
+var myJson = """
+	[{
+		"test": "test"
+	}]
+	"""
+```
+
+If you are using .NET 6 or lower, you can accomplish the same result with the uglier but still as effective language comment.
+
+```csharp
+var myRegex = /*lang=regex*/ "";
+var myJson = /*lang=json,strict*/ @"{""test"":""test""}";
+```
+### String Literal Variants
+#### Composite
 This is the old way and should only be used for logging. [Alignment](https://learn.microsoft.com/en-us/dotnet/standard/base-types/composite-formatting#alignment-component) of tabular data is also possible.
 ```csharp
 string.Format("The time is {0}", DateTime.Now)
 ```
-### Interpolation
+#### Interpolation
 The preferred way mostly. [Alignment](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated#structure-of-an-interpolated-string) also possible.
 ```csharp
 $"The time is {DateTime.Now}"
 ```
-### Verbatim
+#### Verbatim
 For when your string will require many escaped characters. Allows for multiline strings. You still have to escape double quotes, however.
 ```csharp
 @"c:\documents\files\u0066.txt"
 @"He said, ""This is the last \u0063hance\x0021"""
 ```
-### Verbatim Interpolated
+#### Verbatim Interpolated
 To interpolate your verbatim string. Can use both `@$` or `$@` to indicate.
 ```csharp
 $@"The time is
     {DateTime.Now}"
 ```
-### Raw
+#### Raw
 Even easier multiline strings. No escaped characters and includes whitespace and new lines. New lines at the beginning and end are trimmed, however.
 ```csharp
 """
@@ -173,13 +203,13 @@ This is a multi-line
     string literal with the second line indented.
 """
 ```
-### Raw Interpolated
+#### Raw Interpolated
 To interpolate your raw string. Also allows printing braces with interpolation.
 ```csharp
 $"""The point "{X}, {Y}" is {Math.Sqrt(X * X + Y * Y)} from the origin"""
 $$"""The point {{{X}}, {{Y}}} is {{Math.Sqrt(X * X + Y * Y)}} from the origin"""
 ```
-### UTF-8
+#### UTF-8
 .NET strings are UTF-16 by default, but UTF-8 is the standard for web. They are not compile time and cannot be interpolated.
 ```csharp
 "AUTH "u8
