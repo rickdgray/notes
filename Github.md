@@ -1,6 +1,6 @@
 ---
 title: Github
-lastmod: 2023-05-31T15:57:34-05:00
+lastmod: 2023-05-31T16:15:14-05:00
 ---
 # Github
 ## 1Password Integration
@@ -11,6 +11,27 @@ git remote set-url origin <host>:<workplace>/<repo>.git
 git remote set-url origin rickdgray:rickdgray/notes.git
 ```
 See [here](https://developer.1password.com/docs/ssh/git-commit-signing) for actually signing the commits. You can use the same ssh key for both auth and signing.
+
+So the short answer to set up a newly clone repo is
+```powershell
+git clone <repo>.git
+git remote set-url origin rickdgray:rickdgray/<repo>.git
+cd <repo>
+git config -e #local config for repo specific commit signing
+```
+Paste this in the config:
+```toml
+[user]
+  email = rickdgray@outlook.com
+  signingkey = ssh-ed25519 #redacted key; get from 1password
+[gpg]
+  format = ssh
+[gpg "ssh"]
+  program = "C:/Users/rickdgray/AppData/Local/1Password/app/8/op-ssh-sign.exe"
+[commit]
+  gpgsign = true
+```
+Then as long as your SSH key is added to GitHub you're good.
 ## Verified Commits from Linux
 1. Install git and pass
 ```
