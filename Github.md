@@ -1,6 +1,6 @@
 ---
 title: Github
-lastmod: 2023-05-31T15:32:01-05:00
+lastmod: 2023-05-31T15:57:34-05:00
 ---
 # Github
 ## 1Password Integration
@@ -10,6 +10,7 @@ git remote set-url origin <host>:<workplace>/<repo>.git
 # example:
 git remote set-url origin rickdgray:rickdgray/notes.git
 ```
+See [here](https://developer.1password.com/docs/ssh/git-commit-signing) for actually signing the commits. You can use the same ssh key for both auth and signing.
 ## Verified Commits from Linux
 1. Install git and pass
 ```
