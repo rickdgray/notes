@@ -1,11 +1,11 @@
 ---
 title: Terminal
-lastmod: 2023-05-31T14:00:56-05:00
+lastmod: 2023-06-01T18:45:27-05:00
 ---
 # Terminal
 ## Windows
 ### PowerShell
-This is my profile script for [PowerShell 7](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows). If you're not familiar with PowerShell, it's like `.bashrc`. It depends on four libraries:
+This is my __profile__ script for [PowerShell 7](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows). If you're not familiar with PowerShell, the profile is like the `.bashrc`. My profile depends on four libraries:
 * [posh-git](http://dahlbyk.github.io/posh-git/)
 * [oh-my-posh](https://ohmyposh.dev/)
 * [1Password CLI](https://1password.com/downloads/command-line/)

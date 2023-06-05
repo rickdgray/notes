@@ -1,6 +1,6 @@
 ---
 title: System Admin
-lastmod: 2023-05-27T21:55:12-05:00
+lastmod: 2023-05-31T18:45:45-05:00
 ---
 # System Admin
 ## NGINX
@@ -52,6 +52,16 @@ sudo certbot --nginx -d rickdgray.com -d www.rickdgray.com -d dev.rickdgray.com 
 ### Manual
 ```bash
 sudo certbot certonly --manual -d rickdgray.com -d www.rickdgray.com -d dev.rickdgray.com -d code.rickdgray.com -d guac.rickdgray.com -d jambot.rickdgray.com -d nextcloud.rickdgray.com -d speedtest.rickdgray.com --agree-tos --no-bootstrap --manual-public-ip-logging-ok --preferred-challenges dns-01 --server https://acme-v02.api.letsencrypt.org/directory
+```
+### Issues with multiple certs
+If certbot creates a new set of certificates such as `example.com-0001.conf`, then it is getting confused and the easiest solution is to just delete all certificates and generate new.
+```bash
+sudo certbot certificates
+sudo certbot delete
+# delete all
+./certs.sh
+# create all new certs
+sudo systemctl restart nginx.service
 ```
 ## Ubuntu
 ### Disable cloud-init
