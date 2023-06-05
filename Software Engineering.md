@@ -1,6 +1,6 @@
 ---
 title: Software Engineering
-lastmod: 2023-05-28T00:02:30-05:00
+lastmod: 2023-06-05T10:38:21-05:00
 ---
 # Software Engineering
 ## The Mythical Man-Month
@@ -40,7 +40,8 @@ There are two techniques for lowering software development costs that Brooks wri
 - Another technique Brooks mentions is not to develop software at all, but simply to buy it "off the shelf when possible.
 ## Object Oriented Programming
 Inheritance Sucks; composition is better.
-<iframe src="https://www.youtube.com/embed/QM1iUe6IofM"></iframe>
+
+![](https://www.youtube.com/embed/QM1iUe6IofM)
 
 ## Backend for Frontend (BFF)
 https://learn.microsoft.com/en-us/azure/architecture/patterns/backends-for-frontends
