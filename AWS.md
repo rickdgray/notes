@@ -1,6 +1,6 @@
 ---
 title: AWS
-lastmod: 2023-05-27T22:02:34-05:00
+lastmod: 2023-06-09T13:04:11-05:00
 ---
 # AWS
 ## AWS CLI
@@ -128,12 +128,12 @@ Write-Host "Successfully generated role credentials."
 # Write credentials to launchsettings.Json
 Write-Host ""
 Write-Host "Writing credentials to launchsettings.json."
-$launchSettings = Get-Content $PSScriptRoot\DataProcessing.Api\Properties\launchSettings.json -Raw | ConvertFrom-Json
+$launchSettings = Get-Content $PSScriptRoot\App.Api\Properties\launchSettings.json -Raw | ConvertFrom-Json
 if (-not [bool]$launchSettings) { Write-Host "Unable to get launchsettings.json." exit 1; }
-$launchSettings.profiles."DataProcessingService.Api".environmentVariables.AWS_ACCESS_KEY_ID = $key
-$launchSettings.profiles."DataProcessingService.Api".environmentVariables.AWS_SECRET_ACCESS_KEY = $secret
-$launchSettings.profiles."DataProcessingService.Api".environmentVariables.AWS_SESSION_TOKEN = $token
-$launchSettings | ConvertTo-Json -depth 32 | Set-Content $PSScriptRoot\DataProcessing.Api\Properties\launchSettings.json
+$launchSettings.profiles."App.Api".environmentVariables.AWS_ACCESS_KEY_ID = $key
+$launchSettings.profiles."App.Api".environmentVariables.AWS_SECRET_ACCESS_KEY = $secret
+$launchSettings.profiles."App.Api".environmentVariables.AWS_SESSION_TOKEN = $token
+$launchSettings | ConvertTo-Json -depth 32 | Set-Content $PSScriptRoot\App.Api\Properties\launchSettings.json
 Write-Host "Successfully wrote credentials to launchsettings.json."
 
 # Save the settings file

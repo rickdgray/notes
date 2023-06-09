@@ -10,6 +10,7 @@ This is my __profile__ script for [PowerShell 7](https://learn.microsoft.com/en-
 * [oh-my-posh](https://ohmyposh.dev/)
 * [1Password CLI](https://1password.com/downloads/command-line/)
 * [GitHub Copilot CLI](https://githubnext.com/projects/copilot-cli) (More info below)
+* [VMware PowerCLI](https://www.powershellgallery.com/packages/VMware.PowerCLI)
 ```powershell
 Import-Module posh-git
 oh-my-posh init pwsh --config "~/Documents/PowerShell/theme.omp.json" | Invoke-Expression
