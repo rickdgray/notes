@@ -1,6 +1,6 @@
 ---
 title: Database
-lastmod: 2023-05-27T22:00:16-05:00
+lastmod: 2023-06-14T12:29:23-05:00
 ---
 # Database
 ## EF Migrations
@@ -15,7 +15,7 @@ param(
     [string] $MigrationName
 )
 
-dotnet ef --startup-project ../App.Api/ migrations add $MigrationName
+dotnet ef migrations add --startup-project ../App.Api/ --context AppContext $MigrationName
 ```
 Update database
 ```powershell
@@ -25,10 +25,10 @@ param(
 
 # TODO print names of last 5 migrations to allow user to input
 if ([string]::IsNullOrEmpty($TargetMigration)) {
-    dotnet ef --startup-project ../App.Api/ database update
+    dotnet ef database update --startup-project ../App.Api/ --context AppContext
 }
 else {
-    dotnet ef --startup-project ../App.Api/ database update $TargetMigration
+    dotnet ef database update --startup-project ../App.Api/ --context AppContext $TargetMigration
 }
 ```
 ## DB Backup
