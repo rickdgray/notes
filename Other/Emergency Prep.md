@@ -1,6 +1,6 @@
 ---
 title: Emergency Prep
-lastmod: 2023-05-27T22:08:48-05:00
+lastmod: 2023-07-04T15:36:42-05:00
 ---
 # Emergency Prep
 [This family](https://www.reddit.com/r/personalfinance/comments/43iyip/our_family_of_5_lost_everything_in_a_fire/cziljy3) lost everything in a house fire. Great reference for lessons learned.
@@ -318,7 +318,7 @@ Everything here should be kept in a water proof bag of some kind.
 - rain protection (poncho)
 - UV protection (sunscreen, sun protection clothing, sunglasses)
 - sleeping bags/bedding/bivy sack
-- tarp for shelter
+- tarp for shelter (make one like in nighthawk's video; they're better)
 - portable stove/cooking device
 - other camping equipment
 - pocket knife
