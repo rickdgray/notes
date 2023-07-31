@@ -76,6 +76,8 @@ function gh? {
 New-Alias which Get-Command
 New-Alias ll Get-ChildItem
 
+$PSStyle.FileInfo.Directory = ""
+
 clear
 ```
 ### GitHub Copilot CLI
