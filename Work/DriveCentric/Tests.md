@@ -10,3 +10,18 @@ Startup command:
 ```bash
 docker compose -f tests.docker-compose.yml up -d
 ```
+
+## Debugging Functional Test
+Within the `CreateTestServer` function of `TestBase`, logging can be enabled using the following:
+```csharp
+	// more test server creation above
+    .UseStartup<Startup>()
+    .ConfigureLogging((_, loggingBuilder) =>
+    {
+        loggingBuilder.AddConsole();
+    });
+return new TestServer(hostBuilder)
+{
+    PreserveExecutionContext = true,
+};
+```
