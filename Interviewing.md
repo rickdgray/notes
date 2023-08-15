@@ -1,6 +1,6 @@
 ---
 title: Interviewing
-lastmod: 2023-05-27T21:58:28-05:00
+lastmod: 2023-08-15T15:41:26-05:00
 ---
 # Interviewing
 ## Questions for the Interviewer
@@ -44,3 +44,10 @@ Is it high stress?
 Do I have to answer to middle management directly or is that someone else's issue after we don't meet deadlines.
 18) **What is your meeting culture like, and how do employees handle things like zoom fatigue?**
 Are we gonna be glue to the damn camera for 8 hours a day and if there's a lot of meetings, are employees allowed to say "fuck, I need a break" and not attend some?
+19) **What is something that you admire in a peer?**
+20) **How would you describe the work life balance?**
+21) **How much vacation do you usually take per year?**
+22) **What are some pain points in your day to day?**
+23) **How much autonomy do you have in your work?**
+24) **What do you like about working here?**
+25) **What does on-call look like?**

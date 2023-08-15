@@ -1,8 +1,14 @@
 ---
 title: Networking
-lastmod: 2023-05-27T21:57:27-05:00
+lastmod: 2023-08-15T16:47:24-05:00
 ---
 # Networking
+## Tips and Tricks
+### Blocked ports when debugging
+If you have an orphaned service running that's blocking your port, run this
+```powershell
+net stop hns && net start hns
+```
 ## Network Diagram
 Work in progress:
 ```mermaid

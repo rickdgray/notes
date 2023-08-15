@@ -1,6 +1,6 @@
 ---
 title: CSS
-lastmod: 2023-07-06T13:48:37-05:00
+lastmod: 2023-08-15T16:57:01-05:00
 ---
 # CSS
 Some notes on CSS stuff I often forget. [More info](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) to summarize in the future.
@@ -13,12 +13,20 @@ Some notes on CSS stuff I often forget. [More info](https://developer.mozilla.or
 | Child | `>` | Selects immediate descendants (children) of the first element. | `ul > li` will match all `<li>` elements that are directly nested in a `<ul>` element. |
 | Siblings | `~` | Selects all siblings __after__ the first element. | `p ~ span` will match all `<span>` elements that follow a `<p>` element, but not before. |
 | Adjacent Sibling | `+` | Selects the first sibling __after__ the first element. | `h2 + p` will match all `<p>` elements that immediately follow an `<h2>` element, but not before. |
+## Choosing Units
+* For fonts use `rem`
+* Width of elements varies but a good default is the percentage unit in combination with a max width.
+* Max width being relative to readability can be achieved with `ch` unit. Want roughly 45 characters per line? Set max width to 45 `ch`. 75 characters per line is the hard max for readability; aim for less like 60. Also increase line height; the default is too tight for comfortable reading.
+* OK seriously: just don't set height of an element ever. Or damnit if you really need it, use min height.
+* Avoid using `vh` just in general if you support mobile. It was a good idea but it's really wonky and hard to fix because of mobile screens. There's a new unit called `dvh` very similar incoming that fixes mobile issues, though.
+* For padding or margin, use `em` or `rem` depending if you want it to change with font size (like padding around text on a button for example).
+* Media queries: use `em` because of Safari.
 ## Sane Defaults
 Here's some defaults that are good to start with.
 * Fixing box-sizing prevents weird, archaic padding issues.
 * The red outline is helpful for debugging your elements.
 * Setting margin to 0 is a must-have; browsers have differing default margins on the body element.
-* Setting height should be avoided all around. It may be necessary to set `min-height` if you're building a SPA (single page app). Also, `vh` units can't cause problems on mobile browsers, which is fixed by using `dvh`. Unfortunately, it doesn't have full browser support yet, so you can set both so that `vh` acts as a backup.
+* Setting height should be avoided all around. It may be necessary to set `min-height` if you're building a SPA (single page app). Also, `vh` units can cause problems on mobile browsers, which is fixed by using `dvh`. Unfortunately, it doesn't have full browser support yet, so you can set both so that `vh` acts as a backup.
 * Using a flexbox on the body is a bit more intuitive for sizing elements than block style display in my experience.
 * Don't use the default font; it's usually Times New Roman which is a serif font. You want a sans-serif for better screen readability. Roboto from [Google Fonts](https://fonts.google.com/) is a common choice. FYI, it is better to self-host your font than just paste a link into your header.
 * Setting the font size of all elements to one rem is good for resetting, but each header size will need a new size to be set.
