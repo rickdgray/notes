@@ -1,6 +1,6 @@
 ---
 title: Terminal
-lastmod: 2023-06-01T18:45:27-05:00
+lastmod: 2023-08-18T10:17:02-05:00
 ---
 # Terminal
 ## Windows
@@ -10,7 +10,8 @@ This is my __profile__ script for [PowerShell 7](https://learn.microsoft.com/en-
 * [oh-my-posh](https://ohmyposh.dev/)
 * [1Password CLI](https://1password.com/downloads/command-line/)
 * [GitHub Copilot CLI](https://githubnext.com/projects/copilot-cli) (More info below)
-* [VMware PowerCLI](https://www.powershellgallery.com/packages/VMware.PowerCLI)
+
+I also plan on adding some  [VMware PowerCLI](https://www.powershellgallery.com/packages/VMware.PowerCLI) stuff in the future.
 ```powershell
 Import-Module posh-git
 oh-my-posh init pwsh --config "~/Documents/PowerShell/theme.omp.json" | Invoke-Expression
