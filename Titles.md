@@ -1,6 +1,6 @@
 ---
 title: Titles
-lastmod: 2023-05-27T21:54:17-05:00
+lastmod: 2023-08-28T15:14:59-05:00
 ---
 # Titles
 ## What to Expect
@@ -13,15 +13,26 @@ Here's the gist of what to expect for each title.
 * Makes _product_ impact.
 * "I don't need help."
 * Few years of experience.
+* They are able take existing code with issues and improve it.
 ### Senior
 * Makes _team_ impact.
 * "How can I help?"
 * 5-10 years of experience.
+* They are able to create something new and not just iterate on what's already there.
 ### Staff
 * Makes _org_ impact.
 * "Go help."
 * 10-20 years of experience.
 ## Detailed Requirements
+### Senior Software Engineer (L5)
+* Technical direction for small number of engineers (0-5+)
+* Leads design and provides constant day-to-day mentorship on technical direction for team
+* Complexity: 1-2 quarter projects; mitigates against single risks at a time (e.g., capacity)
+* Craftsmanship: Often digs into low-level details, especially in code
+* Scope of Work: Owns immediate area, self-directs, but also plans and scopes larger scale projects
+* Sphere of influence: Sets direction for a small number of engineers
+* 1-2 relatively narrowly scoped technical focus areas
+* Technical Expertise: In design/code reviews, provides guidance about how to solve a problem. Which option is best?
 ### Staff Software Engineer (L6)
 * Typically having strategic impact over some combination of a large work group, a very technically challenging problem, and/or a long time horizon
 * L6 influences velocity of team, mentorship, 10-30 engineers
@@ -34,13 +45,3 @@ Here's the gist of what to expect for each title.
 * Drives efforts across a sizable product group providing clear leadership via setting strategy, resolving disagreements and building consensus
 * Broader leadership across multiple teams
 * Technical Expertise: In design/code reviews, may suggest radically different options informed by and impacting other areas.
-
-### Senior Software Engineer (L5)
-* Technical direction for small number of engineers (0-5+)
-* Leads design and provides constant day-to-day mentorship on technical direction for team
-* Complexity: 1-2 quarter projects; mitigates against single risks at a time (e.g., capacity)
-* Craftsmanship: Often digs into low-level details, especially in code
-* Scope of Work: Owns immediate area, self-directs, but also plans and scopes larger scale projects
-* Sphere of influence: Sets direction for a small number of engineers
-* 1-2 relatively narrowly scoped technical focus areas
-* Technical Expertise: In design/code reviews, provides guidance about how to solve a problem. Which option is best?
