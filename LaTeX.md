@@ -1,8 +1,10 @@
 ---
 title: LaTeX
-lastmod: 2023-08-14T19:16:14-05:00
+lastmod: 2023-08-21T21:38:13-05:00
 ---
 # LaTeX
+## Resources
+The [texfaq](https://texfaq.org/)!
 ## Installing
 Use Tex Workshop extension with VS Code. You'll need to install the full TexLive to get the Perl script that makes things easy. It is recommended to NOT use apt to install TeX Live as it is not up to date. But if you're lazy or going simple, it will work fine.
 ```bash
@@ -10,11 +12,41 @@ sudo apt install texlive-full
 ```
 If you want to install it correctly, you need to use `tlmgr`. More reading can be done [here](https://tug.org/texlive/quickinstall.html).
 ## Tricks
+### Font
 You can set the font to Times New Roman with
 ```tex
 \renewcommand{\familydefault}{ptm}
 ```
 I wouldn't recommend it; Times was designed for tight spaces. The default, called Computer Modern, is better. Garamond is another nice choice. For sans-serif, Helvetica is popular.
+### Package Installing
+[Here's](https://tex.stackexchange.com/questions/73016/how-do-i-install-an-individual-package-on-a-linux-system) a good guide. If installing manually (a `tds.zip` file called a TDS or "Tex Directory Structure" file), you need to find your install location:
+```bash
+# system-wide
+kpsewhich -var-value TEXMFLOCAL
+# your own user access only
+kpsewhich -var-value TEXMFHOME
+```
+
+Then, you unzip the file to it's proper location.
+
+```bash
+sudo unzip -o texdef.tds.zip -d `kpsexpand '$TEXMFLOCAL'`
+```
+
+The resulting file location will look something like `/usr/local/share/texmf/tex/generic/<package>/<package>.tex`
+
+Finally, you must update the indices for all available packages using the following command
+
+```bash
+sudo texhash
+```
+
+If the package contains a font, the map must be updated
+
+```
+sudo updmap --sys --enable Map new-font.map
+```
+
 ## Templates
 ### Formal Letter
 ```tex
