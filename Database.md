@@ -1,6 +1,6 @@
 ---
 title: Database
-lastmod: 2023-06-14T12:29:23-05:00
+lastmod: 2023-06-17T16:26:30-05:00
 ---
 # Database
 ## EF Migrations
@@ -163,3 +163,22 @@ if ($Database.Length -gt 0)
 
 $appsettings | ConvertTo-Json -depth 32 | Set-Content $PSScriptRoot\App.Api\appsettings.local.json
 ```
+
+## Set up new local Dev DB
+You need both SQL Server and SSMS
+Be sure to set the login as "Mixed" and create a password for the "sa" account.
+Login with sa account
+Create the DB by right clicking the server and hitting create new database. All default is fine.
+Create the dev user like below:
+```sql
+-- Creates the login AbolrousHazem with password '340$Uuxwp7Mcxo7Khy'.  
+CREATE LOGIN AbolrousHazem   
+    WITH PASSWORD = '340$Uuxwp7Mcxo7Khy';  
+GO  
+
+-- Creates a database user for the login created above.  
+CREATE USER AbolrousHazem FOR LOGIN AbolrousHazem;  
+GO
+```
+Right click the DB and hit properties. Verify the new user has connect permission granted to the new database.
+Good to go. Go run your migration.
