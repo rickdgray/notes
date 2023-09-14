@@ -1,12 +1,27 @@
 ---
 title: Git
-lastmod: 2023-05-28T08:26:50-05:00
+lastmod: 2023-09-13T11:47:51-05:00
 ---
 # Git
 ## Submodules
 Pull submodules after clone
 ```bash
 git submodule update --init
+```
+## Command Tricks
+If you need to trigger a new build on your CI/CD, you can create an empty commit.
+```bash
+git commit --allow-empty
+```
+### Interactive Rebase
+Don't waste time mucking with `git ammend`; it's messy and complicated.
+TODO: more info here
+If you forgot something and you already pushed up your changes, you can still fix your commit. You need to instead run your rebase on the remote branch and do a force push. That means first **make your fix and push it**. If you try to rebase with local commits, it will screw everything up because you're not in sync and you'll create weird merge commits. Then after your fix, just run rebase normally but on the remote branch.
+```bash
+git commit -m "fix I forgot to add before pushing"
+git push
+git rebase -i origin/branch_name~2 branch_name
+git push origin +branch_name
 ```
 ## Obsidian Setup
 ```bash
