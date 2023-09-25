@@ -1,6 +1,6 @@
 ---
 title: Git
-lastmod: 2023-09-13T11:47:51-05:00
+lastmod: 2023-09-21T10:56:09-05:00
 ---
 # Git
 ## Submodules
@@ -13,6 +13,11 @@ If you need to trigger a new build on your CI/CD, you can create an empty commit
 ```bash
 git commit --allow-empty
 ```
+If you screw up your local copy
+```bash
+git reset --hard <remote branch name>
+git reset --hard origin/develop
+```
 ### Interactive Rebase
 Don't waste time mucking with `git ammend`; it's messy and complicated.
 TODO: more info here
@@ -22,6 +27,17 @@ git commit -m "fix I forgot to add before pushing"
 git push
 git rebase -i origin/branch_name~2 branch_name
 git push origin +branch_name
+```
+## Resolving Issues
+If on `git fetch` you encounter an error related to "early EOF fatal," you can increase the amount of RAM git has access to by adding this to your `$HOME/.gitconfig`.
+```
+[core] 
+	packedGitLimit = 512m 
+	packedGitWindowSize = 512m 
+[pack] 
+	deltaCacheSize = 2047m 
+	packSizeLimit = 2047m 
+	windowMemory = 2047m
 ```
 ## Obsidian Setup
 ```bash

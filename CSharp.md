@@ -1,7 +1,7 @@
 ---
 title: CSharp
 friendlyTitle: C#
-lastmod: 2023-05-30T18:08:54-05:00
+lastmod: 2023-09-20T14:55:10-05:00
 ---
 # C#
 I'm tired of having to look up simple things that I can't immediately remember.
@@ -47,12 +47,16 @@ public MyController(IOptions<PositionOptions> positionOptions)
 }
 ```
 ## Date and Time
+The new standard for this in .NET is called `DateTimeOffset`. It is like `DateTime`, but with a time zone attached.
 ```csharp
 // Declare specific date and time
-var d = new DateTime(2023, 2, 8, 10, 00, 00).AddDays(120);
+var d = new DateTimeOffset(2023, 2, 8, 10, 00, 00).AddDays(120);
+
+// Old style DateTime
+var d = new DateTime(2023, 2, 8, 10, 00, 00);
 
 // Date only
-var c = new DateOnly(2023, 6, 8);
+var c = new DateOnly(2023, 6, 8);
 Console.WriteLine(c.AddDays(-30).ToShortDateString());
 
 // Parse from ISO
