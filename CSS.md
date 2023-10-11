@@ -1,6 +1,6 @@
 ---
 title: CSS
-lastmod: 2023-08-15T16:57:01-05:00
+lastmod: 2023-10-03T16:06:14-05:00
 ---
 # CSS
 Some notes on CSS stuff I often forget. [More info](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) to summarize in the future.
@@ -13,6 +13,13 @@ Some notes on CSS stuff I often forget. [More info](https://developer.mozilla.or
 | Child | `>` | Selects immediate descendants (children) of the first element. | `ul > li` will match all `<li>` elements that are directly nested in a `<ul>` element. |
 | Siblings | `~` | Selects all siblings __after__ the first element. | `p ~ span` will match all `<span>` elements that follow a `<p>` element, but not before. |
 | Adjacent Sibling | `+` | Selects the first sibling __after__ the first element. | `h2 + p` will match all `<p>` elements that immediately follow an `<h2>` element, but not before. |
+## Quick Copies
+### Ellipsis for text
+```{css}
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+```
 ## Choosing Units
 * For fonts use `rem`
 * Width of elements varies but a good default is the percentage unit in combination with a max width.
