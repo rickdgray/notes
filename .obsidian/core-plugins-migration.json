@@ -27,5 +27,5 @@
   "publish": false,
   "sync": false,
   "bookmarks": false,
-  "properties": true
+  "properties": false
 }

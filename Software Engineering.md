@@ -1,8 +1,29 @@
 ---
 title: Software Engineering
-lastmod: 2023-06-05T10:38:21-05:00
+lastmod: 2023-09-25T14:13:34-05:00
 ---
 # Software Engineering
+## Acronyms and Initialisms
+### SOLID
+### ACID
+### DRY
+### KISS
+### YAGNI
+### CAP Theorem
+## Theory
+### Composition over Inheritance
+![](https://www.youtube.com/embed/QM1iUe6IofM)
+### Convention over Configuration
+### Sensible Defaults
+### Principle of Least Astonishment'
+### Single Source of Truth
+### Patterns
+#### Backend for Frontend (BFF)
+https://learn.microsoft.com/en-us/azure/architecture/patterns/backends-for-frontends
+#### CQRS
+https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs
+Commonly used with MediatR
+Not a fan; often hides logic
 ## The Mythical Man-Month
 ### The Mythical Man-Month
 Also known as [Brooks's law](https://en.wikipedia.org/wiki/Brooks%27s_law).
@@ -38,11 +59,3 @@ Instead of every programmer having their own special set of tools, each team sho
 There are two techniques for lowering software development costs that Brooks writes about:
 - Implementers may be hired only after the architecture of the system has been completed (a step that may take several months, during which time prematurely hired implementers may have nothing to do).
 - Another technique Brooks mentions is not to develop software at all, but simply to buy it "off the shelf when possible.
-## Object Oriented Programming
-Inheritance Sucks; composition is better.
-
-![](https://www.youtube.com/embed/QM1iUe6IofM)
-
-## Backend for Frontend (BFF)
-https://learn.microsoft.com/en-us/azure/architecture/patterns/backends-for-frontends
-## Principal of Least Astonishment
