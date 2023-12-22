@@ -1,8 +1,35 @@
 ---
 title: System Admin
-lastmod: 2023-05-31T18:45:45-05:00
+lastmod: 2023-12-21T19:25:54-06:00
 ---
 # System Admin
+## Linux
+Set hostname
+```bash
+sudo vim /etc/hostname
+```
+Change username of current user
+```bash
+# you need a temp user to do the change
+sudo adduser temp
+# temp needs sudo perms
+sudo adduser temp sudo
+
+# now logout and login as temp user
+
+# change username
+sudo usermod -l new-username -m -d /home/new-username old-username
+# change user's groupname
+sudo groupmod -n new-username old-username
+# change user's home directory
+sudo usermod -d /home/newHomeDir -m newUsername
+
+# now logout and login as your new username
+
+# delete the temp
+sudo deluser temp
+sudo rm -r /home/temp
+```
 ## NGINX
 Good default for security headers
 ```
