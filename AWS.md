@@ -1,9 +1,37 @@
 ---
 title: AWS
-lastmod: 2023-07-25T15:29:40-05:00
+lastmod: 2024-01-02T11:28:03-06:00
 ---
 # AWS
-## AWS CLI
+## AWS Auth
+### Credential fetching code
+You can use a default credentials flag in your `IOptions` configuration for the amazon client environment variables.
+```csharp
+public async Task<IAmazonS3> CreateClientAsync()
+{
+	if (_amazonConfig.UseDefaultCredentials)
+	{
+		return new AmazonS3Client(RegionEndpoint.GetBySystemName(_amazonConfig.Region));
+	}
+	else
+	{
+		var stsClient = new AmazonSecurityTokenServiceClient(new AmazonSecurityTokenServiceConfig
+		{
+			RegionEndpoint = RegionEndpoint.GetBySystemName(_amazonConfig.Region)
+		});
+
+		var assumeRoleRequest = new AssumeRoleRequest
+		{
+			RoleArn = _amazonConfig.RoleArn,
+			RoleSessionName = _amazonConfig.RoleSessionName
+		};
+
+		var response = await stsClient.AssumeRoleAsync(assumeRoleRequest);
+		var credentials = response.Credentials;
+		return new AmazonS3Client(credentials, RegionEndpoint.GetBySystemName(_amazonConfig.Region));
+	}
+}
+```
 ### Credential fetching script
 This script depends PowerShell 7 (which you should already be using anyway) because it uses `ConvertFrom-Json -AsHashTable`.
 
