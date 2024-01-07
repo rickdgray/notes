@@ -1,8 +1,35 @@
 ---
 title: System Admin
-lastmod: 2023-05-31T18:45:45-05:00
+lastmod: 2023-12-21T20:33:10-06:00
 ---
 # System Admin
+## Linux
+Set hostname
+```bash
+sudo vim /etc/hostname
+```
+Change username of current user
+```bash
+# you need a temp user to do the change
+sudo adduser temp
+# temp needs sudo perms
+sudo adduser temp sudo
+
+# now logout and login as temp user
+
+# change username and set new home folder
+sudo usermod -l new-username -m -d /home/new-username old-username
+# change user's groupname
+sudo groupmod -n new-username old-username
+# change user's home directory (not needed because you change in first command)
+sudo usermod -d /home/newHomeDir -m newUsername
+
+# now logout and login as your new username
+
+# delete the temp
+sudo deluser temp
+sudo rm -r /home/temp
+```
 ## NGINX
 Good default for security headers
 ```
@@ -86,6 +113,9 @@ ufw allow 11200:11299/udp
 # to do a quick test with netcat
 nc -l 1701
 # then use telnet from windows and send a message
+
+# to undo a change
+ufw delete allow 80
 ```
 ## NFS
 To autoconnect client to nfs at startup, append this line to the `/etc/fstab` file:
