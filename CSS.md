@@ -1,6 +1,6 @@
 ---
 title: CSS
-lastmod: 2023-10-03T16:06:14-05:00
+lastmod: 2024-01-08T12:06:34-06:00
 ---
 # CSS
 Some notes on CSS stuff I often forget. [More info](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) to summarize in the future.
@@ -15,7 +15,7 @@ Some notes on CSS stuff I often forget. [More info](https://developer.mozilla.or
 | Adjacent Sibling | `+` | Selects the first sibling __after__ the first element. | `h2 + p` will match all `<p>` elements that immediately follow an `<h2>` element, but not before. |
 ## Quick Copies
 ### Ellipsis for text
-```{css}
+```css
 overflow: hidden;
 white-space: nowrap;
 text-overflow: ellipsis;
