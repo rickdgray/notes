@@ -71,5 +71,93 @@ sudo updmap --sys --enable Map new-font.map
 
 ### Two Column Scientific Article with Abstract
 ```tex
+\title{Title of Report}
 
+\author{
+  Gray, Rick\cite{Author1}
+  \and
+  Smith, John\cite{Author2}
+}
+
+\newcommand{\abstractText}{\noindent
+  This is an abstract.
+}
+
+\documentclass[11pt, twocolumn]{article}
+\usepackage{graphicx}
+\usepackage{xurl}
+\usepackage[super, comma, sort&compress]{natbib}
+\usepackage{abstract}
+\usepackage{amsmath}
+
+\renewcommand{\abstractnamefont}{\normalfont\bfseries}
+\renewcommand{\abstracttextfont}{\normalfont\small\itshape}
+
+\begin{filecontents}{citations.bib}
+
+@misc{Author1,
+    author       = "Gray, Rick",
+    howpublished = "\url{mailto:rickdgray@utexas.edu}"
+}
+
+@misc{Author2,
+    author       = "Smith, John",
+    howpublished = "\url{mailto:rickdgray@utexas.edu}"
+}
+
+\end{filecontents}
+
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, urlcolor=blue, linkcolor=blue, citecolor=blue}
+
+\begin{document}
+
+\twocolumn[
+  \begin{@twocolumnfalse}
+    \maketitle
+    \begin{abstract}
+      \abstractText
+      \newline
+      \newline
+    \end{abstract}
+  \end{@twocolumnfalse}
+]
+
+\section{Introduction}
+
+\begin{table*}
+    \centering
+    \begin{tabular}{lll}
+        1 & 2 & 5 \\
+        3 & 4 & 6
+    \end{tabular}
+    \caption{Floating table} \label{tab:hresult}
+\end{table*}
+
+\subsection{Section I}
+
+This is an intro.
+
+\subsubsection{Inline Table}
+
+This is an inline table.
+
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  1 & 2 \\ \hline
+  3 & 4 \\ \hline
+  5 & 6 \\ \hline
+\end{tabular}
+\end{center}
+
+\section{Conclusion}
+
+This is a conclusion.
+
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{citations}
+
+\end{document}
 ```
