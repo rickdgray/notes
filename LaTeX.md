@@ -1,6 +1,6 @@
 ---
 title: LaTeX
-lastmod: 2023-08-21T21:38:13-05:00
+lastmod: 2024-01-08T19:08:50-06:00
 ---
 # LaTeX
 ## Resources
