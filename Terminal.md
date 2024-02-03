@@ -1,6 +1,6 @@
 ---
 title: Terminal
-lastmod: 2023-08-18T10:17:02-05:00
+lastmod: 2024-02-03T12:35:42-06:00
 ---
 # Terminal
 ## Windows
@@ -76,6 +76,7 @@ function gh? {
 
 New-Alias which Get-Command
 New-Alias ll Get-ChildItem
+New-Alias cp Copy-Item
 
 $PSStyle.FileInfo.Directory = ""
 
