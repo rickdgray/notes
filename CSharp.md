@@ -1,7 +1,7 @@
 ---
 title: CSharp
 friendlyTitle: C#
-lastmod: 2023-09-20T14:55:10-05:00
+lastmod: 2024-02-09T17:02:33-06:00
 ---
 # C#
 I'm tired of having to look up simple things that I can't immediately remember.
@@ -355,4 +355,54 @@ class Point
 Using the init only setter, we have the option to create immutable objects like this along with the standard constructor option:
 ```csharp
 var p = new Point() { X = 42, Y = 13 };
+```
+## Methods from Object
+Here is some boilerplate for overriding the standard methods inherited from `Object`.
+```csharp
+public override string ToString()
+{
+    return Value;
+}
+
+public override int GetHashCode()
+{
+    return Value.GetHashCode();
+}
+
+public override bool Equals(object? obj)
+{
+    if (obj == null)
+    {
+        return false;
+    }
+
+    if (ReferenceEquals(this, obj))
+    {
+        return true;
+    }
+
+    var item = obj as Status;
+
+    if (item == null)
+    {
+        return false;
+    }
+
+    return Value.Equals(item.Value);
+}
+
+public static bool operator == (Status a, Status b)
+{
+    if (a is null)
+    {
+        return b is null;
+    }
+
+    return a.Equals(b);
+}
+
+public static bool operator != (Status a, Status b)
+{
+    return !(a == b);
+}
 ```
