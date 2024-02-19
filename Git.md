@@ -1,6 +1,6 @@
 ---
 title: Git
-lastmod: 2023-09-21T10:56:09-05:00
+lastmod: 2024-02-19T17:09:21-06:00
 ---
 # Git
 ## Submodules
@@ -29,6 +29,7 @@ git rebase -i origin/branch_name~2 branch_name
 git push origin +branch_name
 ```
 ## Resolving Issues
+### Fetch Crashing
 If on `git fetch` you encounter an error related to "early EOF fatal," you can increase the amount of RAM git has access to by adding this to your `$HOME/.gitconfig`.
 ```
 [core] 
@@ -38,6 +39,37 @@ If on `git fetch` you encounter an error related to "early EOF fatal," you can i
 	deltaCacheSize = 2047m 
 	packSizeLimit = 2047m 
 	windowMemory = 2047m
+```
+### Trashing Broken Branch
+In the event of a branch that can't easily be recoverable, you can simply rename the bad branch, create a new one, then apply all changes to the new branch as unstaged changes. Then you can clean up the code and make a new commit. This unfortunately destroys the git history.
+```bash
+# rename locally
+git branch -m feature_name feature_name_old
+
+# delete original on remote
+git push origin --delete feature_name
+
+# unset upstream
+git branch --unset-upstream feature_name_old
+
+# push new branch name
+git push origin feature_name_old
+
+# set new upstream
+git push origin -u feature_name_old
+
+# checkout branch you want to branch from
+git checkout develop
+
+# might as well grab latest
+git fetch
+git pull
+
+# recreate original branch name
+git checkout -b feature_name
+
+# copy over all changes as unstaged
+git merge --no-commit --no-ff feature_name_old
 ```
 ## Obsidian Setup
 ```bash
