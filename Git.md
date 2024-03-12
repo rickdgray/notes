@@ -1,6 +1,6 @@
 ---
 title: Git
-lastmod: 2024-02-19T17:09:21-06:00
+lastmod: 2024-03-04T17:41:26-06:00
 ---
 # Git
 ## Submodules
@@ -39,6 +39,10 @@ If on `git fetch` you encounter an error related to "early EOF fatal," you can i
 	deltaCacheSize = 2047m 
 	packSizeLimit = 2047m 
 	windowMemory = 2047m
+```
+Another possibility is the "unable to update local ref" error. A simple fix is to try to prune.
+```bash
+git gc --prune=now
 ```
 ### Trashing Broken Branch
 In the event of a branch that can't easily be recoverable, you can simply rename the bad branch, create a new one, then apply all changes to the new branch as unstaged changes. Then you can clean up the code and make a new commit. This unfortunately destroys the git history.
