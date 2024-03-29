@@ -1,6 +1,6 @@
 ---
 title: Terminal
-lastmod: 2023-05-30T14:09:14-05:00
+lastmod: 2024-03-29T11:02:17-05:00
 ---
 # Terminal
 ```powershell
@@ -31,4 +31,8 @@ function creds {
 
 # https://drivecentric.atlassian.net/wiki/spaces/BM/pages/959479839/Using+Entity+Framework+Core
 $env:ASPNETCORE_ENVIRONMENT='Local'
+```
+## Nuget Restore
+```powershell
+dotnet restore solution.sln --no-cache
 ```
