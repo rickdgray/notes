@@ -1,19 +1,19 @@
 ---
 title: CompiledAccessor
-lastmod: 2024-04-26T10:23:37-05:00
+lastmod: 2024-04-27T19:34:56-05:00
 ---
-# CompiledSettor
+# CompiledGettor
 ```csharp
 using System.Linq.Expressions;
 using System.Reflection;
 
 namespace Inventory.Api.Import
 {
-    public sealed class CompiledSetter
+    public sealed class CompiledGetter
     {
         private readonly Dictionary<Type, Dictionary<string, Delegate>> _properties = new();
 
-        public CompiledSetter(Type type)
+        public CompiledGetter(Type type)
         {
             Initialize(type);
         }
@@ -28,14 +28,14 @@ namespace Inventory.Api.Import
             _properties[type] = new Dictionary<string, Delegate>();
             foreach (var prop in type.GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.GetProperty | BindingFlags.SetProperty))
             {
-                if (prop.CanWrite)
+                if (prop.CanRead)
                 {
-                    CreateSetterDelegateRecursive(type, prop);
+                    CreateGetterDelegateRecursive(type, prop);
                 }
             }
         }
 
-        public void Set<T>(T obj, string propertyName, object value)
+        public TValue Get<TObject, TValue>(TObject obj, string propertyName)
         {
             if (obj == null)
             {
@@ -48,9 +48,9 @@ namespace Inventory.Api.Import
             }
 
             var action = GetActionFor(obj.GetType(), propertyName);
-            if (action is Action<T, object> act)
+            if (action is Func<TObject, object> act)
             {
-                act(obj, value);
+                return (TValue)act(obj);
             }
             else
             {
@@ -58,16 +58,16 @@ namespace Inventory.Api.Import
             }
         }
 
-        private void CreateSetterDelegateRecursive(Type type, PropertyInfo property, List<PropertyInfo> parentProperties = null, string prefix = "")
+        private void CreateGetterDelegateRecursive(Type type, PropertyInfo property, List<PropertyInfo> parentProperties = null, string prefix = "")
         {
             if (property.PropertyType != typeof(List<Uri>) && property.PropertyType.IsClass && property.PropertyType != typeof(string))
             {
                 // For setting first level of subproperties
                 foreach (var prop in property.PropertyType.GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.GetProperty | BindingFlags.SetProperty))
                 {
-                    if (prop.CanWrite)
+                    if (prop.CanRead)
                     {
-                        CreateSetterDelegateRecursive(
+                        CreateGetterDelegateRecursive(
                             type,
                             prop,
                             parentProperties == null
@@ -79,14 +79,14 @@ namespace Inventory.Api.Import
             }
             else
             {
-                CreateSetterDelegate(type, property, parentProperties, prefix);
+                CreateGetterDelegate(type, property, parentProperties, prefix);
             }
         }
 
-        private void CreateSetterDelegate(Type type, PropertyInfo property, List<PropertyInfo> parentProperties = null, string prefix = "")
+        private void CreateGetterDelegate(Type type, PropertyInfo property, List<PropertyInfo> parentProperties = null, string prefix = "")
         {
-            var parmExpression = Expression.Parameter(type, "it");
-            var castExpression = Expression.Convert(parmExpression, type);
+            var paramExpression = Expression.Parameter(type, "it");
+            var castExpression = Expression.Convert(paramExpression, type);
             MemberExpression propertyExpression;
             if (parentProperties != null)
             {
@@ -103,9 +103,8 @@ namespace Inventory.Api.Import
                 propertyExpression = Expression.Property(castExpression, property.Name);
             }
 
-            var valueExpression = Expression.Parameter(typeof(object), property.Name);
-            var operationExpression = Expression.Assign(propertyExpression, Expression.Convert(valueExpression, property.PropertyType));
-            var lambdaExpression = Expression.Lambda(typeof(Action<,>).MakeGenericType(type, typeof(object)), operationExpression, parmExpression, valueExpression);
+            var expressionBody = Expression.Convert(propertyExpression, typeof(object));
+            var lambdaExpression = Expression.Lambda(typeof(Func<,>).MakeGenericType(type, typeof(object)), expressionBody, paramExpression);
             _properties[type][prefix + property.Name] = lambdaExpression.Compile();
         }
 
@@ -121,6 +120,7 @@ namespace Inventory.Api.Import
     }
 }
 ```
+
 # CompiledSettor
 ```csharp
 using System.Linq.Expressions;
