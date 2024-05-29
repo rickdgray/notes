@@ -1,9 +1,19 @@
 ---
 title: System Admin
-lastmod: 2023-12-21T20:33:10-06:00
+lastmod: 2024-05-24T15:51:32-05:00
 ---
 # System Admin
+## Proxmox
+Initial setup steps
+1. 
 ## Linux
+Initial Debian Setup
+```bash
+su -
+apt install sudo
+adduser <username> sudo
+reboot
+```
 Set hostname
 ```bash
 sudo vim /etc/hostname
