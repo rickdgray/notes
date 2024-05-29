@@ -1,11 +1,15 @@
 ---
 title: System Admin
-lastmod: 2024-05-24T15:51:32-05:00
+lastmod: 2024-05-29T13:08:12-05:00
 ---
 # System Admin
 ## Proxmox
 Initial setup steps
-1. 
+1. [Disable license nag](https://github.com/rickycodes/pve-no-subscription)
+2. Switch to free update repository
+3. Install sudo
+4. [Redirect to port 80/443 using nginx](https://pve.proxmox.com/wiki/Web_Interface_Via_Nginx_Proxy)
+5. Setup notifications
 ## Linux
 Initial Debian Setup
 ```bash
