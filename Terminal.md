@@ -1,6 +1,6 @@
 ---
 title: Terminal
-lastmod: 2024-02-03T12:35:42-06:00
+lastmod: 2024-06-20T15:26:42-05:00
 ---
 # Terminal
 ## Windows
@@ -21,10 +21,6 @@ op completion powershell | Out-String | Invoke-Expression
 Set-PSReadlineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
 
-function repos {
-	& cd ~/source/repos
-}
-
 function e {
 	param (
 		$Path = "."
@@ -41,6 +37,10 @@ function e {
 	}
 	
 	& explorer.exe $Path
+}
+
+function repos {
+	& cd ~/source/repos
 }
 
 # github copilot cli
@@ -82,7 +82,35 @@ function gh? {
 
 New-Alias which Get-Command
 New-Alias ll Get-ChildItem
-New-Alias cp Copy-Item
+
+function git_current_branch {
+	& git branch --show-current
+}
+
+function grt {
+	& cd "$(git rev-parse --show-toplevel || echo .)"
+}
+
+function gaa {
+	& git add --all
+}
+
+function ggsup {
+	& "git branch --set-upstream-to=origin/$(git_current_branch)"
+}
+
+function grbi {
+	& git rebase --interactive
+}
+
+function grhh {
+	& git reset --hard
+}
+
+function restart
+{
+	shutdown /r /t 1
+}
 
 $PSStyle.FileInfo.Directory = ""
 
