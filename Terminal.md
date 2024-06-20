@@ -13,9 +13,13 @@ This is my __profile__ script for [PowerShell 7](https://learn.microsoft.com/en-
 
 I also plan on adding some  [VMware PowerCLI](https://www.powershellgallery.com/packages/VMware.PowerCLI) stuff in the future.
 ```powershell
+[console]::InputEncoding = [console]::OutputEncoding = [System.Text.UTF8Encoding]::new()
 Import-Module posh-git
 oh-my-posh init pwsh --config "~/Documents/PowerShell/theme.omp.json" | Invoke-Expression
 op completion powershell | Out-String | Invoke-Expression
+
+Set-PSReadlineKeyHandler -Key UpArrow -Function HistorySearchBackward
+Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
 
 function repos {
 	& cd ~/source/repos
@@ -26,15 +30,17 @@ function e {
 		$Path = "."
 	)
 	
+	if (-Not (Test-Path $Path)) {
+		$Path = "."
+	}
+	
+	$item = Get-Item $Path
+	if (!$item.PSIsContainer) {
+		& "C:/Program Files/Notepad++/notepad++.exe" $Path
+		return
+	}
+	
 	& explorer.exe $Path
-}
-
-function edit {
-	param (
-		$Filename
-	)
-
-	& "C:/Program Files/Notepad++/notepad++.exe" $Filename
 }
 
 # github copilot cli
