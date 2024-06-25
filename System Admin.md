@@ -1,6 +1,6 @@
 ---
 title: System Admin
-lastmod: 2024-05-29T14:59:56-05:00
+lastmod: 2024-06-25T15:29:51-05:00
 ---
 # System Admin
 ## Proxmox
@@ -151,8 +151,13 @@ nc -l 1701
 # to undo a change
 ufw delete allow 80
 ```
-## NFS
+## NAS
 To autoconnect client to nfs at startup, append this line to the `/etc/fstab` file:
 ```
 hostname.com:/mnt/datastore/share/username/folder /mnt/nfs nfs timeo=500,intr,_netdev 0 0
+```
+To migrate a ZFS dataset to a new pool:
+```bash
+zfs snapshot -r PoolName/DatasetName@SnapshotName
+zfs send -R PoolName/DatasetName@SnapshotName | zfs receive -v PoolName/DatasetName
 ```
