@@ -1,6 +1,6 @@
 ---
 title: Terminal
-lastmod: 2024-03-29T11:02:17-05:00
+lastmod: 2024-07-26T14:01:07-05:00
 ---
 # Terminal
 ```powershell
@@ -35,4 +35,8 @@ $env:ASPNETCORE_ENVIRONMENT='Local'
 ## Nuget Restore
 ```powershell
 dotnet restore solution.sln --no-cache
+```
+## Test Amazon Lambda
+```powershell
+dotnet lambda package -pl .\Inventory.Services.PdfGeneration\ -o .\test.zip -f net8.0
 ```
