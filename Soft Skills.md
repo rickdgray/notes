@@ -1,6 +1,6 @@
 ---
 title: Soft Skills
-lastmod: 2023-09-25T16:32:42-05:00
+lastmod: 2024-08-09T12:23:15-05:00
 ---
 # Soft Skills
 Life lessons in communication I had to learn the hard way.
@@ -9,3 +9,5 @@ Starting a dialogue with a disagreement just makes people dig their heels in. Tr
 ## Force others to own mistakes
 "A failure to adequately plan on their part does not constitute an emergency on our part."
 ## Luck is preparation meets opportunity
+## Use SBI
+If you're uncomfortable giving feedback, use the [SBI](https://www.ccl.org/articles/leading-effectively-articles/closing-the-gap-between-intent-vs-impact-sbii/) framework.
