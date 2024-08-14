@@ -1,6 +1,6 @@
 ---
 title: Terminal
-lastmod: 2024-06-20T15:26:42-05:00
+lastmod: 2024-08-13T18:42:56-05:00
 ---
 # Terminal
 ## Windows
@@ -83,28 +83,39 @@ function gh? {
 New-Alias which Get-Command
 New-Alias ll Get-ChildItem
 
+# utility function to get name of current branch
 function git_current_branch {
 	& git branch --show-current
 }
 
+# go to root of repo
 function grt {
-	& cd "$(git rev-parse --show-toplevel || echo .)"
+	& cd $(git rev-parse --show-toplevel || echo .)
 }
 
+# stage all changes
 function gaa {
 	& git add --all
 }
 
+# set upstream branch to same as local
 function ggsup {
-	& "git branch --set-upstream-to=origin/$(git_current_branch)"
+	& git branch --set-upstream-to=origin/$(git_current_branch)
 }
 
+# interactive rebase
 function grbi {
 	& git rebase --interactive
 }
 
+# trash all local changes (keep local commits)
 function grhh {
 	& git reset --hard
+}
+
+# trash all local changes and commits (reset to what is remote)
+function gtrash {
+	& git reset --hard origin/$(git_current_branch)
 }
 
 function restart
