@@ -32,3 +32,22 @@ npm ls package
 # example
 npm ls color-string
 ```
+## Versioning
+| Syntax | Details | Example |
+|---|---|---|
+| version | Must match version exactly |  |
+| >version | Must be greater than version |  |
+| >=version |  |  |
+| <version |  |  |
+| <=version |  |  |
+| ~version | "Approximately equivalent to version" |  |
+| ^version | "Compatible with version" |  |
+| 1.2.x | 1.2.0, 1.2.1, etc., but not 1.3.0 |  |
+| http://... | URL Dependency |  |
+| * | Matches any version |  |
+| "" | Same as * |  |
+| version1 - version2 |  |  |
+| range1 \|\| range2 | Same as >=version1 <=version2 |  |
+| git... | Git URL Dependency |  |
+| user/repo | GitHub URL Dependency |  |
+| path/path/path | local path |  |
