@@ -1,6 +1,6 @@
 ---
 title: Terminal
-lastmod: 2024-08-13T18:42:56-05:00
+lastmod: 2024-09-24T16:12:48-05:00
 ---
 # Terminal
 ## Windows
@@ -124,6 +124,9 @@ function restart
 }
 
 $PSStyle.FileInfo.Directory = ""
+
+# https://stackoverflow.com/questions/71198994/how-can-i-prevent-escape-sequences-being-added-to-powershell-output
+$PSStyle.OutputRendering = 'Host'
 
 clear
 ```
