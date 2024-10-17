@@ -1,6 +1,6 @@
 ---
 title: System Admin
-lastmod: 2024-06-25T15:29:51-05:00
+lastmod: 2024-09-27T23:33:53-05:00
 ---
 # System Admin
 ## Proxmox
@@ -17,6 +17,15 @@ su -
 apt install sudo
 adduser <username> sudo
 reboot
+```
+Release and Request new IP
+```bash
+# get device for internet
+ip addr
+# release for eth0
+sudo dhclient -r eth0
+# renew for eth0
+sudo dhclient eth0
 ```
 Set hostname
 ```bash
