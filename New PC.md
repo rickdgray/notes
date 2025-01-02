@@ -1,10 +1,10 @@
 ---
 title: New PC
-lastmod: 2024-06-11T11:46:35-05:00
+lastmod: 2025-01-02T11:04:45-06:00
 ---
 # New PC
 ## Software to install
-* 7-zip
+* 7-zip/nanazip
 * git
 * obsidian
 * notepad++
