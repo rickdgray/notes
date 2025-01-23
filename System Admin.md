@@ -1,6 +1,6 @@
 ---
 title: System Admin
-lastmod: 2024-09-27T23:33:53-05:00
+lastmod: 2025-01-23T14:38:43-06:00
 ---
 # System Admin
 ## Proxmox
@@ -22,10 +22,12 @@ Release and Request new IP
 ```bash
 # get device for internet
 ip addr
+# delete old ip
+sudo ip addr del 192.168.1.10/24 dev ens10
 # release for eth0
-sudo dhclient -r eth0
+sudo dhclient -r ens10
 # renew for eth0
-sudo dhclient eth0
+sudo dhclient ens10
 ```
 Set hostname
 ```bash
