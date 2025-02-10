@@ -1,6 +1,6 @@
 ---
 title: System Admin
-lastmod: 2025-01-23T14:38:43-06:00
+lastmod: 2025-02-10T13:56:12-06:00
 ---
 # System Admin
 ## Proxmox
@@ -172,3 +172,51 @@ To migrate a ZFS dataset to a new pool:
 zfs snapshot -r PoolName/DatasetName@SnapshotName
 zfs send -R PoolName/DatasetName@SnapshotName | zfs receive -v PoolName/DatasetName
 ```
+
+## Proxmox
+
+### Import Disk for HAOS VM
+
+1. Navigate to the installation page on the [HA website](https://www.home-assistant.io/installation/alternative).
+2. Right-click the KVM/Proxmox link and copy the address.
+3. In your Proxmox console, use `wget` to download the file, then `unxz` to decompress it.
+```bash
+wget https://github.com/home-assistant/operating-system/releases/download/14.2/haos_ova-14.2.qcow2.xz
+unxz ./haos_ova-14.2.qcow2.xz
+```
+4. Create the VM.
+    1. General:
+        - Select your VM name and ID.
+        - Select "start at boot."
+    2. OS:
+        - Select "Do not use any media."
+    3. System:
+        - Change "machine" to "q35."
+        - Change "BIOS" to "OVMF (UEFI)."
+        - Select the "EFI storage" (typically `local-lvm`).
+        - Uncheck "Pre-Enroll keys."
+    4. Disks:
+        - Delete the SCSI drive and any other disks.
+    5. CPU:
+        - Set minimum 2 cores.
+    6. Memory:
+        - Set minimum 4096 MB.
+    7. Network:
+        - Leave default unless you have special requirements (static, VLAN, etc).
+    8. Confirm and finish. Do not start the VM yet.
+5. Add the image to the VM; In your node's console, use the following command to import the image from the host to the VM specified by it's ID.
+```bash
+qm importdisk 101 ./haos_ova-14.2.qcow2.xz local-lvm
+```
+6. Select your HA VM.
+7. Go to the "Hardware" tab.
+8. Select the "Unused Disk" and click the "Edit" button.
+9. Check the "Discard" box if you're using an SSD then click "Add."
+10. Select the "Options" tab.
+11. Select "Boot Order" and hit "Edit."
+12. Check the newly created drive (likely `scsi0`) and move to first in priority order.
+13. Finish Up:
+    1. Start the VM.
+    2. Check the shell of the VM. If it booted up correctly, you should be greeted with the link to access the Web UI.
+    3. Navigate to http://homeassistant.local:8123 to access Web UI.
+14. Done. Everything should be up and running now.
