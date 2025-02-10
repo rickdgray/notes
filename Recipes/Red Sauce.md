@@ -1,6 +1,6 @@
 ---
 title: Red Sauce
-lastmod: 2024-11-03T15:30:06-06:00
+lastmod: 2025-01-25T20:23:20-06:00
 ---
 # Red Sauce
 ## Details
@@ -9,12 +9,17 @@ lastmod: 2024-11-03T15:30:06-06:00
 | ? | ? | ? |
 
 ## Ingredients
+* olive oil
 * 1 can tomato
 * 1/2 stick butter
 * 1 yellow onion chopped
-* 1 Tbsp minced garlic
-* 1 Tbsp dried oregano
-* 1 tsp crushed red pepper
+* 20g minced garlic
+* 2g dried oregano
+* 1.5g crushed red pepper
+* Salt
+* Fresh ground pepper
+* ? leaves of basil
+* ? cups dry, white wine
 
 ## Directions
 ### Intermediate Ingredient 1
