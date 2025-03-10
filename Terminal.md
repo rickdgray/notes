@@ -1,6 +1,6 @@
 ---
 title: Terminal
-lastmod: 2024-09-24T16:12:48-05:00
+lastmod: 2025-03-10T14:54:42-05:00
 ---
 # Terminal
 ## Windows
@@ -43,45 +43,9 @@ function repos {
 	& cd ~/source/repos
 }
 
-# github copilot cli
-function ?? { 
-    $TmpFile = New-TemporaryFile
-    github-copilot-cli what-the-shell ('use powershell to ' + $args) --shellout $TmpFile
-    if ([System.IO.File]::Exists($TmpFile)) { 
-        $TmpFileContents = Get-Content $TmpFile
-            if ($TmpFileContents -ne $nill) {
-            Invoke-Expression $TmpFileContents
-            Remove-Item $TmpFile
-        }
-    }
-}
- 
-function git? {
-    $TmpFile = New-TemporaryFile
-    github-copilot-cli git-assist $args --shellout $TmpFile
-    if ([System.IO.File]::Exists($TmpFile)) {
-        $TmpFileContents = Get-Content $TmpFile
-            if ($TmpFileContents -ne $nill) {
-            Invoke-Expression $TmpFileContents
-            Remove-Item $TmpFile
-        }
-    }
-}
-
-function gh? {
-    $TmpFile = New-TemporaryFile
-    github-copilot-cli gh-assist $args --shellout $TmpFile
-    if ([System.IO.File]::Exists($TmpFile)) {
-        $TmpFileContents = Get-Content $TmpFile
-            if ($TmpFileContents -ne $nill) {
-            Invoke-Expression $TmpFileContents
-            Remove-Item $TmpFile
-        }
-    }
-}
-
 New-Alias which Get-Command
 New-Alias ll Get-ChildItem
+New-Alias edit e
 
 # utility function to get name of current branch
 function git_current_branch {
@@ -99,8 +63,8 @@ function gaa {
 }
 
 # set upstream branch to same as local
-function ggsup {
-	& git branch --set-upstream-to=origin/$(git_current_branch)
+function gsup {
+	& git push --set-upstream origin $(git_current_branch)
 }
 
 # interactive rebase
@@ -125,8 +89,8 @@ function restart
 
 $PSStyle.FileInfo.Directory = ""
 
-# https://stackoverflow.com/questions/71198994/how-can-i-prevent-escape-sequences-being-added-to-powershell-output
-$PSStyle.OutputRendering = 'Host'
+# auto generated copilot aliases
+. "C:\Users\rickgray\Documents\PowerShell\gh-copilot.ps1"
 
 clear
 ```
