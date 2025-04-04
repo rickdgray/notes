@@ -1,6 +1,6 @@
 ---
 title: Red Sauce
-lastmod: 2025-01-25T20:23:20-06:00
+lastmod: 2025-03-23T17:45:12-05:00
 ---
 # Red Sauce
 ## Details
@@ -16,10 +16,11 @@ lastmod: 2025-01-25T20:23:20-06:00
 * 20g minced garlic
 * 2g dried oregano
 * 1.5g crushed red pepper
-* Salt
-* Fresh ground pepper
+* 3g Salt
+* 2.5g Fresh ground pepper
 * ? leaves of basil
-* ? cups dry, white wine
+* ? bunch of chopped parsley
+* 1/2 cup dry, white wine
 
 ## Directions
 ### Intermediate Ingredient 1
