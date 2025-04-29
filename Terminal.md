@@ -1,6 +1,6 @@
 ---
 title: Terminal
-lastmod: 2025-03-10T14:54:42-05:00
+lastmod: 2025-04-11T10:02:23-05:00
 ---
 # Terminal
 ## Windows
@@ -26,8 +26,9 @@ function e {
 		$Path = "."
 	)
 	
-	if (-Not (Test-Path $Path)) {
-		$Path = "."
+	if ($PSBoundParameters.ContainsKey("Path") -And -Not (Test-Path $Path)) {
+		Write-Error "Path '$Path' does not exist."
+		return
 	}
 	
 	$item = Get-Item $Path
