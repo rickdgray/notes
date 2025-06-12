@@ -1,6 +1,6 @@
 ---
 title: LaTeX
-lastmod: 2024-01-08T19:08:50-06:00
+lastmod: 2025-06-11T19:56:14-05:00
 ---
 # LaTeX
 ## Resources
@@ -11,6 +11,26 @@ Use Tex Workshop extension with VS Code. You'll need to install the full TexLive
 sudo apt install texlive-full
 ```
 If you want to install it correctly, you need to use `tlmgr`. More reading can be done [here](https://tug.org/texlive/quickinstall.html).
+### CJK Fonts
+If you need to use Chinese, Japanese, or Korean characters, you need to install a font first:
+```base
+sudo apt update
+sudo apt install fonts-noto-cjk
+```
+This will install the Google Noto font package which has a few fonts. **All fonts have all characters**. The only difference between each font in the package is regional styling (How would a Chinese person right a Korean Hangul character, for example). Here's the options for serif fonts:
+* `Noto Serif CJK JP` -> Japanese
+* `Noto Serif CJK KR` -> Korean
+* `Noto Serif CJK SC` -> Simplified Chinese
+* `Noto Serif CJK TC` -> Traditional Chinese
+* `Noto Serif CJK HK` -> Hong Kong
+
+To enable them, add this to the preamble of your document:
+```tex
+% Enable Chinese, Japanese, and Korean characters
+\usepackage{luatexja-fontspec}
+\setmainjfont{Noto Serif CJK JP}
+```
+Finally you must compile with **lualatex**.
 ## Tricks
 ### Font
 You can set the font to Times New Roman with
