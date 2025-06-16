@@ -1,6 +1,6 @@
 ---
 title: LaTeX
-lastmod: 2025-06-11T19:56:14-05:00
+lastmod: 2025-06-15T22:20:00-05:00
 ---
 # LaTeX
 ## Resources
@@ -17,7 +17,7 @@ If you need to use Chinese, Japanese, or Korean characters, you need to install 
 sudo apt update
 sudo apt install fonts-noto-cjk
 ```
-This will install the Google Noto font package which has a few fonts. **All fonts have all characters**. The only difference between each font in the package is regional styling (How would a Chinese person right a Korean Hangul character, for example). Here's the options for serif fonts:
+This will install the Google Noto font package which has a few fonts. **All fonts have all characters**. The only difference between each font in the package is regional styling (How would a Chinese person write a Korean Hangul character, for example). Here's the options for serif fonts:
 * `Noto Serif CJK JP` -> Japanese
 * `Noto Serif CJK KR` -> Korean
 * `Noto Serif CJK SC` -> Simplified Chinese
