@@ -96,7 +96,45 @@ $PSStyle.FileInfo.Directory = ""
 clear
 ```
 ### GitHub Copilot CLI
-Github Copilot CL
+Github Copilot CLI has had a few iterations. Now it looks like [this](https://github.com/github/copilot-cli).  To get the clean syntax it used to have and strip out all the extra crap it likes to print, here's my PowerShell function. GPT-5 is significantly faster than claude, so I use that.
+```powershell
+function ?? {
+	[CmdletBinding()]
+	param (
+		[Parameter(ValueFromRemainingArguments = $true, Position = 0)]
+		[string[]]$Prompt
+	)
+	
+	$argsToPass = @(
+		'--model',
+		'gpt-5',
+		'--allow-all-tools'
+	)
+
+	if ($Prompt.Count -lt 1) {
+		& copilot --model gpt-5 --allow-all-tools
+		return
+	}
+
+	$Prompt = "I am a sysadmin and software engineer and I have forgotten this common command. Assume PowerShell unless specified otherwise. Produce a single line example command to do the following: $Prompt. Only a single line. It must be as simple and concise as possible. Do not include any explanations or additional text. Do not include any comments. The command must be the first line of output."
+
+	$argsToPass += @(
+		'-p',
+		($Prompt -join ' ')
+	)
+
+	$out = & copilot @argsToPass `
+		2>$null `  # Error
+		3>$null `  # Warning
+		4>$null `  # Verbose
+		5>$null `  # Debug
+		6>$null	   # Information
+
+	if ($out) {
+		Write-Host -NoNewline $out
+	}
+}
+```
 ### Generate theme
 This is the script I use to generate my oh-my-posh theme.
 ```powershell
