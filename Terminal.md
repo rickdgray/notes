@@ -96,7 +96,7 @@ $PSStyle.FileInfo.Directory = ""
 clear
 ```
 ### GitHub Copilot CLI
-Install the npm package [here](https://www.npmjs.com/package/@githubnext/github-copilot-cli).  The above functions were pulled from [here](https://www.hanselman.com/blog/github-copilot-for-cli-for-powershell).
+Github Copilot CL
 ### Generate theme
 This is the script I use to generate my oh-my-posh theme.
 ```powershell
