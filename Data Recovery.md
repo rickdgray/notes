@@ -1,13 +1,25 @@
 ---
 title: Data Recovery
-lastmod: 2024-08-01T11:47:29-05:00
+lastmod: 2025-11-03T05:03:29-05:00
 ---
 # Data Recovery
 This is a very underdeveloped page. I have a lot more to say but haven't written it yet.
-## S.M.A.R.T.
+## SMART Test
 The easiest way to run do these tests is with a linux live environment. You should use one that has smartmontools already installed; I like Knoppix. Lean and convenient.
 ```bash
-# example of triggering short test on drive
+# if you need to install
+sudo apt install smartmontools
+# short test; defaults to background
+sudo smartctl -t short /dev/sda
+# short test in foreground (blocks until done)
+sudo smartctl -t short -C /dev/sda
+# long test on another drive
+sudo smartctl -t long -C /dev/sdc
+```
+## Viewing SMART Data
+```bash
+# view data
+sudo smartctl -a /dev/sda | less
 ```
 ## Recovery
 If you believe your drive could be failing, __DON'T__ run tests on it. The more you use it, the more you push a precarious situation closer to failure. You should always immediately clone all data on the drive as fast as possible.
