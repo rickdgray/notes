@@ -1,6 +1,6 @@
 ---
 title: Networking
-lastmod: 2023-08-15T16:47:24-05:00
+lastmod: 2026-01-15T14:01:24-05:00
 ---
 # Networking
 ## Tips and Tricks
@@ -28,6 +28,22 @@ flowchart TD
 2-->|*.rickdgray.com|4
 2-->|devnotes.rickdgray.com|6
 4-->|ports 80 and 443|7
+```
+## Maintenance
+### Aruba S2500-24P PoE
+I have this managed switch which has been great but is tedious to get connected to and make adjustments. It's static IP is at 3 and it's ssh encryption algos are outdated. Here's the commands needed to make changes:
+```bash
+# connect via supported excryption using admin
+ssh -oHostKeyAlgorithms=+ssh-rsa -oCiphers=+aes256-cbc -m hmac-sha1 admin@192.168.1.3
+
+# login
+enable
+
+# some smoke test commands
+show version
+show running-config
+show vlan
+show interface status
 ```
 ## Subnet Mask
 More info [here](https://www.aelius.com/njh/subnet_sheet.html)
