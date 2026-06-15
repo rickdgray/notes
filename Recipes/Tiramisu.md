@@ -1,67 +1,80 @@
 ---
 title: Tiramisu
-lastmod: 2026-06-15T10:20:29-05:00
+lastmod: 2026-06-15T15:42:43
 ---
+
 # Tiramisu
-Anyone who tells you they have a better tiramisu recipe is wrong, especially the purists who use the original recipe.
+
+A refined take on an Italian classic. Zabaglione replaces raw egg yolks for a richer, silkier cream, and heavy cream stands in for whipped whites to deliver a mousse that holds its shape beautifully.
+
 ## Details
-| Cook Time | Yield | Serves |
-| --- | --- | --- |
-| 2 hrs | 8in/20cm Cake | 6-8 |
+
+| Cook Time | Yield         | Serves |
+| --------- | ------------- | ------ |
+| 2 hrs     | 8in/20cm Cake | 6–8    |
 
 ### Why This Recipe Works
-* Egg whites are hard to get to hold shape and still don't after time sitting in the fridge. They also don't impart much flavor. This is why we use heavy cream instead: Better flavor, better texture, holds shape for longer.
-* Traditional tiramisu uses sweetened, raw egg yolks. This is simply an inferior ingredient compared to zabaglione. Cooking the yolks into a ribbony cream significantly improves the flavor, improves the texture, and makes the dish safer.
-* Mixing sweetened, yet bitter, espresso into the cream adds incredible flavor and complexity to it, without making the entire dish just taste like coffee.
+
+- **Heavy cream instead of whipped egg whites.** Egg whites are difficult to stabilize and break down over time in the refrigerator, contributing little in the way of flavor. Heavy cream whips reliably to medium peaks, holds its structure well, and imparts a richer, rounder taste.
+- **Zabaglione instead of raw egg yolks.** Cooking the yolks with sugar over a bain-marie transforms them into a thick, ribbony custard with significantly deeper flavor and a smoother texture than sweetened raw yolks. It also eliminates the food safety concern associated with serving uncooked eggs.
+- **Espresso folded into the cream.** Incorporating a portion of the sweetened espresso directly into the mascarpone mixture distributes coffee flavor throughout the dessert, adding complexity without making the dish taste overwhelmingly of coffee.
 
 ## Ingredients
-* 1.5 cup/1 large Mokapot espresso
-* 1/2 cup sugar (for espresso)
-* About 1 tbsp Disaronno (optional)
-* 6-7 large egg yolks, whites may be discarded
-* 1/2 cup sugar (for egg yolks)
-* pinch salt
-* 16 oz. [mascarpone](Mascarpone)
-* 1 cup heavy cream
-* 1 pack/24 savoiardi
-* cocoa powder
+
+- 1½ cups brewed Moka pot espresso (6-cup model), approximately 350ml
+- 1 cup granulated sugar, divided (½ cup for espresso, ½ cup for zabaglione)
+- 1 tbsp Disaronno amaretto *(optional, to add subtle, complimentary almond note)*
+- 6 large egg yolks
+- 1 pinch salt
+- 16 oz mascarpone cheese, at room temperature
+- 1 cup heavy whipping cream
+- 24 savoiardi (ladyfinger biscuits)
+- Unsweetened cocoa powder, for dusting
 
 ## Directions
-Set mascarpone on counter to cool to room temperature.
+
+### Advance Prep
+
+Remove the mascarpone from the refrigerator and set aside at room temperature. It should be fully tempered before use to prevent lumping when beaten into the zabaglione.
 
 ### Espresso Solution
-1. Make espresso and sweeten with sugar while still hot.
-2. Mix in Disaronno.
-3. Place in freezer.
+
+1. Brew a full pot of Moka pot espresso to yield approximately 1½ cups. While still hot, dissolve ½ cup of the sugar into the espresso and stir until fully incorporated.
+2. Stir in the Disaronno, if using.
+3. Transfer to the freezer to chill rapidly while you prepare the zabaglione.
 
 ### Zabaglione
-1. Fill bottom half of a bain-marie with about 1 inch of water and place over high heat.
-2. While water comes to boil, add the egg yolks to the top half of the bain-marie.
-3. Using an electric hand mixer on the highest speed, beat the eggs while slowly adding sugar until the mixture is thick, pale yellow, and the sugar is completely dissolved (4 to 5 minutes).
-4. Mix in a pinch of salt.
-5. Decrease the heat to low to maintain a simmer. Put the top half of the bain-marie atop the bottom half with the boiling water. Beat the mixture on medium speed, until it is thick, ribbony, and the temperature at the top reaches 140°F and at the bottom reaches 150°F.
-6. Immediately move to a room temperature bowl to prevent overcooking egg yolks from latent heat.
+
+1. Fill the bottom vessel of a bain-marie with approximately 1 inch (2.5 cm) of water and bring to a boil over high heat.
+2. While the water heats, combine the egg yolks and the remaining ½ cup of sugar in the top vessel. Using a hand mixer on high speed, beat the mixture until it is thick, pale yellow, and the sugar is fully dissolved, about 4 to 5 minutes.
+3. Add the pinch of salt and stir to incorporate.
+4. Reduce the heat to low to maintain a steady simmer. Set the top vessel over the simmering water and beat on medium speed, scraping the sides occasionally, until the mixture is thick and ribbony. Monitor temperature carefully: the mixture at the surface should reach 140°F (60°C) and at the bottom of the bowl 150°F (65°C). Do not exceed 150°F as overheating will curdle the yolks. Erring slightly under temperature is preferable.
+5. Immediately transfer the zabaglione to a room-temperature bowl to halt cooking from residual heat.
 
 ### Cream Mixture
-1. Take espresso mixture out of freezer and mix in 3/8 cup (6 tbsp).
-2. Beat mascarpone into zabaglione on low. The cheese can whip so do not overbeat.
-3. Beat heavy cream to medium peaks and fold into mixture.
 
-### Tiramisu
-1. Prepare an 8in/20cm round cake pan with removable bottom with a sheet of wax paper for easy removal later.
-2. Spread thin layer of mascarpone mixture across bottom of pan to fill corners.
-3. Moisten both sides of lady fingers by dipping briefly in espresso mixture until soaked but not soggy. Lay them on thin layer of mascarpone mixture.
-4. Fill pan with mascarpone mixture until one-third full.
-5. Repeat previous two steps two more times to create three layers total.
-6. Level off top of pan with straight edge and decorate top with sifted cocoa powder.
-7. Place in refrigerator overnight.
-8. Use a towel dampened with very hot water to warm the edges of the pan. The cake will slide out with removable bottom. Wax paper will allow cake to separate from bottom as well.
-9. Garnish with fresh mint leaves and strawberries or other fruit of your choice. Serve cold.
+1. Retrieve the espresso solution from the freezer and measure out 6 tablespoons (⅜ cup). Whisk this portion into the zabaglione until smooth. The mixture will appear watery at this stage; this is expected and will set overnight.
+2. Add the tempered mascarpone and beat on low speed until just combined and smooth. Do not overbeat, as mascarpone can seize and become grainy.
+3. In a separate bowl, whip the heavy cream to medium peaks, then gently fold into the mascarpone mixture in two additions until uniform.
 
-## Notes
-It can be difficult to cook the zabaglione to the correct temperature; it will take some practice. It is imperative that you do not go over 150°F. The eggs will curdle into what will appear to be clumps of scrambled eggs. Try to aim for a lower temperature as going a little under is OK. I recommend using a good instant-read thermometer.
+### Assembly
 
-Adding the espresso mixture to the cream will make it appear overly watery. This is normal and will firm up in the fridge.
+1. Line the base of an 8-inch (20 cm) round springform or removable-bottom cake pan with a sheet of parchment or wax paper, cut to fit. Spread a thin layer of the cream mixture across the bottom to fill any gaps and create an even base.
+2. Working one at a time, briefly dip each ladyfinger into the remaining espresso solution, moistening both sides. The biscuits should be saturated but not soggy; a quick 1-second dip per side is sufficient. Arrange a single layer of soaked biscuits over the cream base.
+3. Spread one-third of the remaining cream mixture evenly over the biscuits. Repeat the biscuit-and-cream layering process two more times, finishing with a final layer of cream on top. You will have three biscuit layers and four cream layers in total.
+4. Use a straight edge to level the surface flush with the rim of the pan. Sift cocoa powder evenly over the surface in a thin, uniform layer.
+5. Transfer to the refrigerator and chill overnight, or for a minimum of 8 hours, until fully set.
+6. To unmold, dampen a kitchen towel with very hot water and press it against and around the outer edge of the pan for 15 to 20 seconds to gently release the cream from the sides. Release the springform latch or push up the removable bottom. The parchment will allow the cake to release cleanly from the base.
+7. Garnish with fresh mint and seasonal fruit if desired. Slice and serve cold.
 
-### Nutrition
-To be determined
+## Nutrition
+
+*Per serving (based on 8 servings).*
+
+| Nutrient      | Per Serving |
+| ------------- | ----------- |
+| Calories      | 580 cal     |
+| Fat           | 44 g        |
+| Carbs         | 47 g        |
+| Sugars        | 35 g        |
+| Protein       | 9 g         |
