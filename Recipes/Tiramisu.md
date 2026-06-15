@@ -1,6 +1,6 @@
 ---
 title: Tiramisu
-lastmod: 2023-05-27T22:07:43-05:00
+lastmod: 2026-06-15T10:20:29-05:00
 ---
 # Tiramisu
 Anyone who tells you they have a better tiramisu recipe is wrong, especially the purists who use the original recipe.
