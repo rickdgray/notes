@@ -1,6 +1,7 @@
 # Phalanx DMS Setup Automation — Requirements
 
-**Author:** Rick Gray
+**Status:** Draft — pending team review
+**Author:** Rick Gray (draft assisted by Claude during DMS-2304)
 **Date:** 2026-05-19
 **Related:** [DMS-2304 Dominion UI Smoke](2026-05-19-dms-ui-smoke-dominion-design.md), [Confluence DMS Settings Configuration Matrix](https://drivecentric.atlassian.net/wiki/spaces/DDT/pages/5782372403/DMS+Settings+Configuration+Matrix+By+Onboarding+Phase)
 
@@ -12,10 +13,14 @@ The motivating problem: the DMS-2304 smoke (Dominion) showed that "provision a P
 
 ## Scope
 
-**In scope:** every step a human currently performs between (a) deciding to run a DMS smoke and (b) the smoke actually executing against the env. Includes Phalanx provisioning, environment-specific config, fixture population, local secret injection, and the per-DMS configuration that today requires a UI click-through in WebCRM.
+**In scope:** the full path from "I have a Phalanx env GUID" to "the smoke has validated this DMS works end-to-end." Includes:
+
+- Phalanx provisioning
+- Environment-specific config and fixture population
+- Local secret injection
+- The smoke test itself — which is *not* separable from "configuration" because we've made the deliberate decision to merge them. A single per-DMS smoke walks: configure the DMS via the WebCRM UI → create a customer + deal → push the deal to the DMS → mark the deal as delivered (the delivered deal is then called a "delivery") → pull the delivery back and verify it returned through the DMS path.
 
 **Out of scope:**
-- The smoke tests themselves (covered by DMS-2304 and per-DMS follow-ups).
 - Anything Phalanx already provisions automatically — confirmed during DMS-2304 investigation that API keys, vendor dealer credentials, database seeding, and per-DMS environment config (outside of the user-facing matrix flags) are seeded by Phalanx provisioning itself and require no test-side intervention.
 - Production DMS configuration and customer onboarding workflows.
 
@@ -45,7 +50,9 @@ Each step is classified as one of:
 | 2.2 | `cypress.env.json` must contain test-runner secrets (`PHALANX_API_KEY`, `GMAIL_API`, `PLAYWRIGHT_ELASTICSEARCH_API_KEY`, and others) | **B** | These are test-runner-side secrets the developer's machine needs (distinct from Phalanx-internal credentials, which are already provisioned). Secrets live in 1Password; new contributors copy them manually. **Why not A:** 1Password CLI (`op read op://...`) is the right automation path but adds an external dependency, and IT/security needs to sign off on automated secret retrieval per developer machine. **Proposed approach if approved:** add `npm run setup:secrets` that uses the `op` CLI to pull the canonical `cypress.env.json` template; document the 1Password CLI install + auth step. |
 | 2.3 | Cypress test users created in Phalanx env's DB via batch `admin:createUsersBatch` task | **A** (already automated via `setup:phalanx`; improvable) | Currently invoked via `npx cypress run` inside `setup:phalanx`, which forces a Cypress dependency on Playwright-only contributors and brings the Gmail OAuth dependency. **Improvement (already filed as a follow-up chip):** decouple user creation from the Cypress task system — move to a pure-Node admin API call. Classification: **A** for the existing behavior; **B** for the improved (decoupled) version, because it requires confirming the admin user-creation API surface is callable from pure Node. |
 
-### Phase 3: Per-DMS configuration (currently UI-driven)
+### Phase 3: The smoke test itself (configure → push → deliver → pull)
+
+The per-DMS smoke is one combined test that walks configuration AND the deal lifecycle. Steps 3.1–3.6 are the configuration half (largely automated by DMS-2304); steps 3.7–3.11 are the lifecycle half (partially automated, partially to-be-built).
 
 | # | Step | Classification | Notes |
 |---|---|---|---|
@@ -55,12 +62,17 @@ Each step is classified as one of:
 | 3.4 | Add DMS → select provider → fill per-provider fields | **A** | Provider-agnostic page object in DMS-2304 (`dmsSettingsPage.js`); per-provider field maps as small files (`dominionFormFields.js`). Each new DMS adds one field-map file modeled on Dominion's. |
 | 3.5 | Save → Activate → handle Migrate popup | **A** | Automated in DMS-2304. |
 | 3.6 | Verify configuration persists across page reload | **A** | Automated in DMS-2304. |
+| 3.7 | Create a test customer and deal (API setup, not UI) | **A** | Existing helpers `CommonLocators.API().createCustomerWithDeal(...)` + `addVehicle(...)` handle this — already used by the existing `gee.pushDealToDMS.spec.js` for CDK/Reynolds/DealerTrack. Reused as-is for Dominion's push spec. |
+| 3.8 | Push the deal to the DMS via the WebCRM UI (desking view → Push to DMS) | **A** | The `CustomerCard` page object exposes `.pushDeal().pushDealToDMSProcess().assertPushDealSuccess(DMS_PROVIDER)`. Already used by existing push specs; reused for Dominion. |
+| 3.9 | Mark the deal as delivered (the delivered deal becomes a "delivery") | **B** | Not yet automated for the Dominion smoke. **Why not A:** the delivery-mark step's UI / API surface needs confirmation per-DMS — some providers may require a DMS-side action, others may have a direct WebCRM control. **Proposed approach:** investigate during the next push spec iteration; if it's a WebCRM UI action, add a method to `CustomerCard`/`DesckingPage`; if it's a DMS-side action, add an API helper to `apiRequestsStagingDMS.js`. **[TEAM CONFIRM]:** is the "mark as delivered" action consistently the same across all 9 DMSes, or per-DMS? |
+| 3.10 | Pull the delivery back and verify it returned (the inbound side of the DMS round-trip) | **B** | Not yet automated as a UI step. Today, the existing `webAdminDmsApi.assertDMSImportKibanaLogs` (Playwright API) verifies pulls via Kibana log search — a comparable Cypress helper exists or can be added. **Why not A:** for Dominion specifically, we don't yet know whether a pull is automatic after delivery (cron-driven on the DMS side) or requires a manual trigger via WebCRM/WebAdmin. **Proposed approach:** assert via the existing Kibana log helper; if a UI trigger is needed first, capture it in the page object. **[TEAM CONFIRM]:** is the pull triggered automatically post-delivery for every DMS, or is the test expected to fire a "request pull" action? |
+| 3.11 | Cleanup: remove the test customer and deal (API teardown) | **A** | `CommonLocators.API().removeCustomer(...)` handles this. Already in the existing push specs' `afterEach`. |
 
 ### Phase 4: Verification / observability prereqs
 
 | # | Step | Classification | Notes |
 |---|---|---|---|
-| 4.1 | `PLAYWRIGHT_ELASTICSEARCH_API_KEY` populated in `cypress.env.json` (for tests that assert via Kibana logs, e.g., the push spec) | **B** | Same situation as 2.2 — test-runner-side secret injection. |
+| 4.1 | `PLAYWRIGHT_ELASTICSEARCH_API_KEY` populated in `cypress.env.json` (for tests that assert via Kibana logs, e.g., the push/pull verification in 3.10) | **B** | Same situation as 2.2 — test-runner-side secret injection. |
 | 4.2 | Phalanx env's Elasticsearch endpoint reachable from the test runner | **A** (already automated) | `setup:phalanx` writes `ELASTICSEARCH_ENDPOINT` into `config/phalanx.json`. |
 
 ## Prioritization recommendation (for team to confirm / reorder)
@@ -69,9 +81,10 @@ Order of implementation, ranked by [impact × ease]:
 
 1. **Decouple Phalanx setup from Cypress** (Phase 2.3 improvement). Already flagged as a chip during DMS-2304. Small change with a meaningful ergonomics win for Playwright-only contributors and removes the Gmail-OAuth-secret dependency from the setup path.
 2. **Store-switcher Cypress command** (Phase 3.1). Unblocks the "test against any specific Gee store" requirement for all DMS smokes. Small implementation; high reuse.
-3. **Build out per-DMS fixtures + field maps** (Phases 3.2, 3.4 applied to each remaining DMS). Mechanical work — each DMS is roughly the same effort as Dominion was. Track as one ticket per DMS or one umbrella ticket with sub-tasks.
-4. **Secret injection automation via 1Password CLI** (Phases 2.2 / 4.1). Needs IT/security sign-off; impact is per-developer one-time so not urgent, but reduces friction for every new contributor.
-5. **Phalanx auto-provisioning** (Phase 1.1). Lowest priority despite the biggest single time cost (~30 min) because the provisioning latency itself, not the automation gap, is the blocker for PR-gated smokes. Worth doing only after the provisioning latency is addressed on the Phalanx side, or if a "warm pool" of pre-provisioned envs becomes available.
+3. **Complete the deal-lifecycle half of the Dominion smoke** (Phases 3.9, 3.10). Mark-as-delivered + pull verification are the gap between "Dominion is configured" and "Dominion round-trips end-to-end." Until these land, the per-DMS smoke isn't a true smoke. Investigate during the next Dominion push spec iteration.
+4. **Build out per-DMS fixtures + field maps** (Phases 3.2, 3.4 applied to each remaining DMS). Mechanical work — each DMS is roughly the same effort as Dominion was. Track as one ticket per DMS or one umbrella ticket with sub-tasks. Should land after #3 so each new DMS smoke covers the full lifecycle from day one.
+5. **Secret injection automation via 1Password CLI** (Phases 2.2 / 4.1). Needs IT/security sign-off; impact is per-developer one-time so not urgent, but reduces friction for every new contributor.
+6. **Phalanx auto-provisioning** (Phase 1.1). Lowest priority despite the biggest single time cost (~30 min) because the provisioning latency itself, not the automation gap, is the blocker for PR-gated smokes. Worth doing only after the provisioning latency is addressed on the Phalanx side, or if a "warm pool" of pre-provisioned envs becomes available.
 
 ## Review process
 
@@ -94,4 +107,6 @@ For convenience, all items that need team input:
 
 - **2.2 / 4.1:** 1Password CLI as secret injection mechanism — IT/security sign-off.
 - **2.3 (improved):** admin user-creation API callable from pure Node — confirm endpoint exists and is safe to call without the Cypress task layer.
+- **3.9:** is "mark deal as delivered" the same action across all 9 DMSes, or per-DMS?
+- **3.10:** is the pull triggered automatically post-delivery for every DMS, or is the test expected to fire a "request pull" action?
 - **Open questions 1–4 above.**
